@@ -12,16 +12,19 @@
     margin: 0px;
 }
 
-.header{
+.header{ 
+    background-color: black;
+    height: 140px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     list-style-type: none;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    height: 140px;
+            
+
+  
 }
+
+
 
 .contenedorlogo{
     display: flex;
@@ -37,6 +40,8 @@
 .logo{
     width: 125px;
     height: 125px;
+    
+    
 }
 
 .contenedoritems{
@@ -44,6 +49,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     font-size: 20px;
+    
 }
 
 .items{
@@ -69,6 +75,22 @@
     color: white;
     font-size: 20px;
     justify-content: center;  
+    margin-top: 20px;
+}
+
+.peliculas1{
+    display: flex;
+    margin: 0px;
+    justify-content: center;
+   
+}
+.cartelera{
+    display: flex;
+    flex-direction: column;
+}
+.itempeliculas1{
+   
+   
 }
 
 .peliculas{
@@ -77,6 +99,7 @@
     flex-wrap: wrap;
     align-items:center;
     justify-content: space-around;
+    
 }
 
 .imagenserie{
@@ -84,8 +107,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    height: 125px;
-    width: 200px;
+    height: 150px;
+    width: 300px;
 }
 
 .vermas{
@@ -111,6 +134,17 @@
     
 }
 
+.contenedordetailsseries{
+    display: flex;
+    justify-content: center;
+    border: 10px black;
+}
+
+.itemcontenedorseries{
+    width: 1850px;
+    height: 800px;
+}
+
 .contenedorinfodetails{
     
 }
@@ -122,4 +156,27 @@
 
 .parrafodetails{
     font-size: 50px;
+    
+}
+
+.contenedorgeneros{
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+
+.generos{
+    
+}
+
+.itemgeneros{
+     list-style-type: none;
+}
+
+.itemg{
+   
+}
+
+@media screen {
+    
 }
