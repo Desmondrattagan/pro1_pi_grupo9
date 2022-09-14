@@ -3,57 +3,61 @@
 }
 
 .body{
-     background: #F0C27B;  /* fallback for old browsers */
+    background: #F0C27B;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4B1248, #F0C27B);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4B1248, #F0C27B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
-   
-   
-}
-
-.contenedorlogo{
-    
-}
-
-.logo{
-    justify-items: flex-end;
-    width: 125px;
-    height: 125px;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin: 0px;
 }
 
 .header{
     display: flex;
-    flex-wrap: 
-    wrap;
+    flex-wrap: wrap;
     flex-direction: row;
     list-style-type: none;
+    justify-content: center;
+    align-items: center;
     background-color: black;
-    color: white;
+    height: 140px;
+}
+
+.contenedorlogo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     padding-left: 40px;
     font-size: 20px;
-    justify-content: center;  
-    justify-content: flex-start;
-    justify-content: space-between;
     height: 140px;
-   
-   
-    
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
 
+.logo{
+    width: 125px;
+    height: 125px;
 }
 
 .contenedoritems{
     display: flex;
     flex-direction: row;
-    
+    flex-wrap: nowrap;
+    font-size: 20px;
+}
 
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
 }
 
 .contenedorformulario{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    flex-direction: row;
-    border-radius: 20px;
+    
 }
 
 .contenedorfooter{
@@ -63,31 +67,41 @@
     list-style-type: none;
     background-color: black;
     color: white;
-    padding-top: 30px;
     font-size: 20px;
     justify-content: center;  
-
-    
 }
 
 .peliculas{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    justify-content: space-between;
-    padding: 50px;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-around;
 }
-
 
 .imagenserie{
-    height: 225px;
-    width: 300px;
-
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 125px;
+    width: 200px;
 }
 
-.footer{
-  
+.vermas{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    width: 100px;
+    height: 40px;
 }
+
+/*Details*/
 
 .contenedordetails{
     display: flex;
