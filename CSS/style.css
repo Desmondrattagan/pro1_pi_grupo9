@@ -3,21 +3,49 @@
 }
 
 .body{
-    background: #F0C27B;  /* fallback for old browsers */
+     background: #F0C27B;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4B1248, #F0C27B);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4B1248, #F0C27B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+   
+   
 }
 
 .contenedorlogo{
+    
+}
+
+.logo{
+    justify-items: flex-end;
+    width: 125px;
+    height: 125px;
+}
+
+.header{
+    display: flex;
+    flex-wrap: 
+    wrap;
+    flex-direction: row;
+    list-style-type: none;
+    background-color: black;
+    color: white;
+    padding-left: 40px;
+    font-size: 20px;
+    justify-content: center;  
+    justify-content: flex-start;
+    justify-content: space-between;
+    height: 140px;
+   
+   
+    
 
 }
 
 .contenedoritems{
     display: flex;
-    justify-content: left;
-    align-items: center;
     flex-direction: row;
-    border-radius: 20px;
+    
+
 }
 
 .contenedorformulario{
@@ -35,10 +63,49 @@
     list-style-type: none;
     background-color: black;
     color: white;
-    padding-top: 40px;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
+    padding-top: 30px;
     font-size: 20px;
+    justify-content: center;  
+
+    
+}
+
+.peliculas{
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+
+.imagenserie{
+    height: 225px;
+    width: 300px;
+
+}
+
+.footer{
+  
+}
+
+.contenedordetails{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-self: flex-end ;
+    
+}
+
+.contenedorinfodetails{
+    
+}
+
+.contenedorsinopsisdetails{
+   display: flex;
+   background-color:#4B1248;
+}
+
+.parrafodetails{
+    font-size: 50px;
 }
