@@ -7,3 +7,38 @@
     background: -webkit-linear-gradient(to right, #4B1248, #F0C27B);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4B1248, #F0C27B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+.contenedorlogo{
+
+}
+
+.contenedoritems{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 20px;
+}
+
+.contenedorformulario{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 20px;
+}
+
+.contenedorfooter{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style-type: none;
+    background-color: black;
+    color: white;
+    padding-top: 40px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
