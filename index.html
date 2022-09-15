@@ -8,142 +8,177 @@
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="/Proyecto/pro1_pi_grupo9/Details.html">
 </head>
-<body class="body">
+
+<body>
     <header class="header">
-        <section class="contenedorlogo">
-           <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/index.html"><img class="logo" src="./img/logo.png" alt="logo"></a> 
+        <section>
+           <a href="./index.html"><img class="logo" src="./img/DEAL.png" alt="logo"></a> 
         </section>
 
         <nav>
             <ul class="contenedoritems">
-                <li class="items home"><a class="items home" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/index.html">HOME</a> </li>|
-                <li class="items favorites"><a class="items favorites"mhref="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Favorites.html"> FAVORITES</a></li>|
-                <li class="items genres"><a class="items favorites" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Genres.html">GENRES</a> </li>|
+                |<li class="items home"><a class="items home" href="./index.html">HOME</a> </li>|
+                <li class="items favorites"><a class="items favorites" href= "./Favorites.html"> FAVORITES</a></li>|
+                <li class="items genres"><a class="items favorites" href="./Genres.html">GENRES</a> </li>|
             </ul>
         </nav>
         
-        <form class="contenedorformulario" method="post" target="_blank">
-            <input type="search" name="buscaddor" placeholder="Buscar">
-            <input type="submit" value="Buscar">
-        </form>
-        
+            <form action="./search_result.html" method="GET">
+                <input class="formulario" type="search" name="buscador" placeholder="Serie, película...">
+                <input class="formulario" type="submit" value="Buscar">
+            </form>
+
+       
     </header>
      
-    <section class="peliculas1"> <a class="itempeliculas1" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html"><img src='./img/8-xmen-movie-poster-design.jpg'></a></section>
     
-  
+    <section id="inicio" class="peliculas1"> <!-- Imagen principal --> </section> 
+    
    
     <section class="cartelera">
-        <section class="titulo"><h2>Peliculas Populares</h2></section>
-        <section class="peliculas">
-        <article >
-            <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html"><img class="imagenserie" src="./img/avatar.jfif" alt="" srcset=""></a>
-            <h2>AVATAR |01/01/2010|</h2>
-            <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html">Details</a></article>
-        <article>
-    
-            <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html"><img class="imagenserie" src="./img/avatar.jfif" alt="" srcset=""></a>
-            <h2>AVATAR |01/01/2010|</h2>
-            <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html">Details</a></article>
-        <article>
-    
-            <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html"><img class="imagenserie" src="./img/avatar.jfif" alt="" srcset=""></a>
-            <h2>AVATAR |01/01/2010|</h2>
-            <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html">Details</a></article>
-        <article>
-            
-            <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html"><img class="imagenserie" src="./img/avatar.jfif" alt="" srcset=""></a>
-            <h2>AVATAR |01/01/2010|</h2>
-            <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html">Details</a></article>
-    
-        <article>
-            <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html"><img class="imagenserie" src="./img/avatar.jfif" alt="" srcset=""></a>
-            <h2> AVATAR |01/01/2010|</h2>
-            <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_peliculas.html">Details</a></article>
 
-            </section>
+        <h2 class="titulo">Películas populares</h2>
+
+        <section class="containerPeliculas">
+        <article class="peliculas">
+            <a href="./Details_peliculas.html"><img class="imagenserie" src="./img/peliculaspopulares/jokerPoster.jpg" alt="Poster Joker"></a>
+            <a class="nombres" href="./Details_peliculas.html">JOKER</a>
+            <a class="nombres" href="./Details_peliculas.html">(2019)</a> 
+            <a class="vermas" href="./Details_peliculas.html">Details</a>
+        </article>
+        
+        <article class="peliculas">
+            <a href="./Details_peliculas.html"><img class="imagenserie" src="./img/peliculaspopulares/bohemian.jpg" alt="Poster Bohemian Rhapsody "></a>
+            <a class="nombres" href="./Details_peliculas.html">BOHEMIAN RHAPSODY</a> 
+            <a class="nombres" href="./Details_peliculas.html">(2018)</a>
+            <a class="vermas" href="./Details_peliculas.html">Details</a>
+        </article>
+        
+        <article class="peliculas">
+            <a href="./Details_peliculas.html"><img class="imagenserie" src="./img/peliculaspopulares/stars.jpg" alt="The fault in our stars"></a>
+            <a class="nombres" href="./Details_peliculas.html">THE FAULT IN OUR STARS</a>
+            <a class="nombres" href="./Details_peliculas.html">(2014)</a>
+            <a class="vermas" href="./Details_peliculas.htmll">Details</a>
+        </article>
+
+        <article class="peliculas">
+            <a href="./Details_peliculas.html"><img class="imagenserie" src="./img/peliculaspopulares/theimpossible.jpg" alt="The impossible"></a>
+            <a class="nombres" href="./Details_peliculas.html">THE IMPOSSIBLE</a>
+            <a class="nombres" href="./Details_peliculas.html">(2004)</a> 
+            <a class="vermas" href="./Details_peliculas.html">Details</a>
+        </article>
+    
+        <article class="peliculas">
+            <a href="./Details_peliculas.html"><img class="imagenserie" src="./img/peliculaspopulares/whitechicks.jpg" alt="White chicks"></a>
+            <a class="nombres" href="./Details_peliculas.html">WHITE CHICKS</a>
+            <a class="nombres" href="./Details_peliculas.html">(2004)</a> 
+            <a class="vermas" href="./Details_peliculas.html">Details</a>
+        </article>
+
+        </section>
             
     </section>
-    <br>
-    <br>
-    <br>
-    
   
+
+
+
    <section class="cartelera">
-    <section class="titulo"> <h2>Series Populares</h2></section>
-    <section class="peliculas">
-        <article>
-            <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html"><img class="imagenserie" src="./img/the-sandman-cover.webp" alt="" srcset=""></a>
-        <h2>the sandman |05/08/2022|</h2>
-        <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html">Details</a></article>
-        
-        <article>
-            <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html"><img class="imagenserie" src="./img/the-sandman-cover.webp" alt="" srcset=""></a>
-            <h2>the sandman |05/08/2022|</h2>
-            <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html">Details</a></article>
-            
-            <article>
-                <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html"><img class="imagenserie" src="./img/the-sandman-cover.webp" alt="" srcset=""></a>
-                <h2>the sandman |05/08/2022|</h2>
-                <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html">Details</a></article>
-                
-
-                <article>
-                    <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html"><img class="imagenserie" src="./img/the-sandman-cover.webp" alt="" srcset=""></a>
-                    <h2>the sandman |05/08/2022|</h2>
-                    <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html">Details</a></article>
-                    
-
-                    <article>
-                        <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html"><img class="imagenserie" src="./img/the-sandman-cover.webp" alt="" srcset=""></a>
-                        <h2>the sandman |05/08/2022|</h2>
-                        <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html">Details</a></article>
-                    </section>
-                        
-                    </section>
-                    <br>
-                    <br>
-                    <br>
-                    
-       
-            <section class="cartelera">
-                <section class="titulo"> <h2>Mi lista</h2></section>
-                <section class="peliculas">
-                    <article>
-                        <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html"><img class="imagenserie" src="./img/the-sandman-cover.webp" alt="" srcset=""></a>
-                        <h2>the sandman |05/08/2022|</h2>
-                        <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html">Details</a></article>
-        
-                        <article>
-            <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html"><img class="imagenserie" src="./img/the-sandman-cover.webp" alt="" srcset=""></a>
-            <h2>the sandman |05/08/2022|</h2>
-            <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html">Details</a></article>
-            
-            <article>
-                <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html"><img class="imagenserie" src="./img/the-sandman-cover.webp" alt="" srcset=""></a>
-                <h2>the sandman |05/08/2022|</h2>
-                <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html">Details</a></article>
-                
-
-                <article>
-                    <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html"><img class="imagenserie" src="./img/the-sandman-cover.webp" alt="" srcset=""></a>
-                    <h2>the sandman |05/08/2022|</h2>
-                    <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html">Details</a></article>
-                    
-                    
-                    <article>
-                        <a href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html"><img class="imagenserie" src="./img/the-sandman-cover.webp" alt="" srcset=""></a>
-                        <h2>the sandman |05/08/2022|</h2>
-                        <a class="vermas" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Details_series.html">Details</a></article>
-                    </section>
-                        
-                    </section>
-                    
-                    
-                    <footer class="contenedorfooter">
-      <p class="footer"> Aldana Garnero  | Desmond Rattagan</p>
     
-  
+        <h2 class="titulo">Series populares</h2>
+        
+        <section class="containerPeliculas">
+        <article>
+            <a href="./Details_series.html"><img class="imagenserie" src="./img/seriespopulares/breakingbad.jpg" alt="Breaking bad"></a>
+            <a class="nombres" href="./Details_peliculas.html">BREAKING BAD</a>
+            <a class="nombres" href="./Details_peliculas.html">(2008)</a> 
+            <a class="vermas" href="./Details_series.html">Details</a>
+        </article>
+        
+        <article>
+            <a href="./Details_series.html"><img class="imagenserie" src="./img/seriespopulares/greys.jpg" alt="Grey's Anatomy"></a>
+            <a class="nombres" href="./Details_peliculas.html">GREY'S ANATOMY</a> 
+            <a class="nombres" href="./Details_peliculas.html">(2005)</a> 
+            <a class="vermas" href="./Details_series.html">Details</a>
+        </article>
+            
+        <article>
+            <a href="./Details_series.html"><img class="imagenserie" src="./img/seriespopulares/lossimuladores.jpg" alt="Los simuladores"></a>
+            <a class="nombres" href="./Details_peliculas.html">LOS SIMULADORES</a>
+            <a class="nombres" href="./Details_peliculas.html">(2002)</a> 
+            <a class="vermas" href="./Details_series.html">Details</a>
+        </article>
+                
+        <article>
+            <a href="./Details_series.html"><img class="imagenserie" src="./img/seriespopulares/peaky.jpg" alt="Peaky Blinders"></a>
+            <a class="nombres" href="./Details_peliculas.html">PEAKY BLINDERS</a>
+            <a class="nombres" href="./Details_peliculas.html">(2013)</a> 
+            <a class="vermas" href="./Details_series.html">Details</a>
+        </article>
+                    
+        <article>
+            <a href="./Details_series.html"><img class="imagenserie" src="./img/seriespopulares/thecrown.jpg" alt="The crown"></a>
+            <a class="nombres" href="./Details_peliculas.html">THE CROWN</a>
+            <a class="nombres" href="./Details_peliculas.html">(2016)</a> 
+            <a class="vermas" href="./Details_series.html">Details</a>
+        </article>    
+    
+        </section>
+                        
+    </section>
+                    
+    
+
+
+    <section class="cartelera">
+
+        <h2 class="titulo">Mi lista</h2>
+
+        <section class="containerPeliculas">
+            <article>
+                <a href="./Details_series.html"><img class="imagenserie" src="./img/milista/adam.jpg" alt="Just go with it"></a>
+                <a class="nombres" href="./Details_peliculas.html">JUST GO WITH IT</a>
+                <a class="nombres" href="./Details_peliculas.html">(2011)</a> 
+                <a class="vermas" href="./Details_series.html">Details</a>
+            </article>
+            
+            <article>
+                <a href="./Details_series.html"><img class="imagenserie" src="./img/milista/conjuro.jpg" alt="The conjuring"></a>
+                <a class="nombres" href="./Details_peliculas.html">THE CONJURING</a>
+                <a class="nombres" href="./Details_peliculas.html">(2013)</a> 
+                <a class="vermas" href="./Details_series.html">Details</a>
+            </article>
+            
+            <article>
+                <a href="./Details_series.html"><img class="imagenserie" src="./img/milista/gambit.jpg" alt="The Queen's Gambit"></a>
+                <a class="nombres" href="./Details_peliculas.html">THE QUEEN'S GAMBIT</a>
+                <a class="nombres" href="./Details_peliculas.html">2020)</a> 
+                <a class="vermas" href="./Details_series.html">Details</a>
+            </article>
+                
+
+            <article>
+                <a href="./Details_series.html"><img class="imagenserie" src="./img/milista/gossip.jpg" alt="Gossip girl"></a>
+                <a class="nombres" href="./Details_peliculas.html">GOSSIP GIRL</a>
+                <a class="nombres" href="./Details_peliculas.html">(2007)</a> 
+                <a class="vermas" href="./Details_series.html">Details</a>
+            </article>
+                    
+                    
+            <article>
+                <a href="./Details_series.html"><img class="imagenserie" src="./img/milista/shrek.jpg" alt="shrek"></a>
+                <a class="nombres" href="./Details_peliculas.html">SHREK</a>
+                <a class="nombres" href="./Details_peliculas.html">(2001)</a> 
+                <a class="vermas" href="./Details_series.html">Details</a>
+            </article>
+
+        </section>
+
+    </section>
+
+                    
+                    
+<footer>
+  <p class="footer"> Aldana Garnero  | Desmond Rattagan</p>    
 </footer>
 
 

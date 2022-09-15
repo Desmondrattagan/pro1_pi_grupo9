@@ -2,46 +2,35 @@
     box-sizing: border-box;
 }
 
-.body{
-    background: #F0C27B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4B1248, #F0C27B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4B1248, #F0C27B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: white;
-    background-repeat: no-repeat;
-    background-position: top;
-    margin: 0px;
+a{
+    text-decoration: none;
+    color:white;
 }
 
-.header{ 
-    background-color: black;
-    height: 140px;
+body{
+    color: white;
+    background-image: url(../img/backgorund2.png);
+    background-color: #2b074b;
+    background-repeat: repeat;
+    background-size: contain;
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    background-color: rgba(16, 15, 15, 0.491);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     list-style-type: none;
-            
-
-  
-}
-
-
-
-.contenedorlogo{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding-left: 40px;
-    font-size: 20px;
-    height: 140px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
 .logo{
-    width: 125px;
-    height: 125px;
-    
-    
+   height: 60px;
+   margin-left: 20px;
 }
 
 .contenedoritems{
@@ -49,7 +38,6 @@
     flex-direction: row;
     flex-wrap: nowrap;
     font-size: 20px;
-    
 }
 
 .items{
@@ -59,70 +47,74 @@
     color: white;
     margin-left: 10px;
     margin-right: 10px;
-    text-decoration: none;
-}
-
-.contenedorformulario{
-    
-}
-
-.contenedorfooter{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     list-style-type: none;
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    justify-content: center;  
-    margin-top: 20px;
 }
 
-.peliculas1{
-    display: flex;
-    margin: 0px;
-    justify-content: center;
-   
-}
-.cartelera{
-    display: flex;
-    flex-direction: column;
-}
-.itempeliculas1{
-   
-   
+.formulario{
+    border-radius: 10px;
+    height: 25px;
 }
 
-.peliculas{
+/* Imagen principal */
+#inicio{
+    background-image: url("../img/8-xmen-movie-poster-design.jpg");
+    height: 480px;
+    background-size: 100%;
+}
+
+/* Películas, series, mi lista */
+.containerPeliculas{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    align-items:center;
-    justify-content: space-around;
-    
+    flex-direction: row;
+    justify-content: center;
 }
+
+.titulo{
+    margin-left: 10px;
+    margin-top: 100px;
+}
+
 
 .imagenserie{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    height: 300px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 15px;
+} 
+
+.nombres{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 40px;
+    margin-right: 40px;
     justify-content: space-around;
-    height: 150px;
-    width: 300px;
-}
+    margin-bottom: 15px;
+} 
 
 .vermas{
-    text-decoration: none;
-    color: white;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: black;
+    background-color: rgba(16, 15, 15, 0.696);
     width: 100px;
     height: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
+
+
+
+
+
+
+
 
 /*Details*/
 
@@ -145,9 +137,6 @@
     height: 800px;
 }
 
-.contenedorinfodetails{
-    
-}
 
 .contenedorsinopsisdetails{
    display: flex;
@@ -165,18 +154,39 @@
    
 }
 
-.generos{
-    
-}
 
 .itemgeneros{
      list-style-type: none;
 }
 
-.itemg{
-   
-}
 
 @media screen {
     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: rgba(16, 15, 15, 0.769);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    color: white;
+    font-size: 20px;
+    justify-content: center;  
+    margin-top: 100px;
 }
