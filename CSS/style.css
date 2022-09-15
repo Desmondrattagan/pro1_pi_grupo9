@@ -117,82 +117,85 @@ header{
 
 
 /*Details*/
-
-.contenedordetails{
+.contenedorimagen{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     flex-wrap: nowrap;
-    align-self: flex-end ;
-    
+    justify-content: flex-start;
 }
 
-.contenedordetailsseries{
+.imagendetail{
+    height: 740px;
+    width: 610px;
+}
+
+.contenedortexto{
     display: flex;
-    justify-content: center;
-    border: 10px black;
-}
-
-.itemcontenedorseries{
-    width: 1850px;
-    height: 800px;
-}
-
-
-.contenedorsinopsisdetails{
-   display: flex;
-   background-color:#4B1248;
-}
-
-.parrafodetails{
-    font-size: 50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     
 }
+
+.tituloserie{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(16, 15, 15, 0.696);
+    align-items: center;
+    width: 150px;
+    height: 40px;
+}
+
+
+.datos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: right;
+    
+}
+
+
+/* Genero */
 
 .contenedorgenerospeliculas{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-evenly;
-    padding-top: 30px;
-   
-    
-   
-   
+    padding-top: 50px;
 }
 
-
 .itemgeneros{
-     list-style-type: none;
-    padding: 30px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     background-color: rgba(16, 15, 15, 0.696);
-    width: 150px;
-    height: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
+    width: 140px;
+    height: 60px;
+    list-style-type: none;
+
 }
 
 .contenedorgenerosseries{
     display: flex;
-    justify-content: space-evenly;
-    
-   
-    padding-top: 100px;
-}
-
-.generos{
-    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 50px;
 }
 
 
-
-
+/* ? */
 @media screen {
     
 }
+
+/* Search result */
+
 
 
 

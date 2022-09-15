@@ -7,24 +7,32 @@
     <title>SEARCH RESULT</title>
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
-<body class="body">
+<body">
     <header class="header">
         <section>
-            <a href="./index.html"><img class="logo" src="./img/DEAL.png" alt="logo"></a> 
-         </section>
+           <a href="./index.html"><img class="logo" src="./img/DEAL.png" alt="logo"></a> 
+        </section>
+
         <nav>
             <ul class="contenedoritems">
-                <li class="items home"><a class="items home" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/index.html">HOME</a> </li>|
-                <li class="items favorites"><a class="items favorites"mhref="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Favorites.html"> FAVORITES</a></li>|
-                <li class="items genres"><a class="items favorites" href="http://127.0.0.1:5501/Proyecto/pro1_pi_grupo9/Genres.html">GENRES</a> </li>|
+                |<li class="items home"><a class="items home" href="./Home.html">HOME</a> </li>|
+                <li class="items favorites"><a class="items favorites" href= "./Favorites.html"> FAVORITES</a></li>|
+                <li class="items genres"><a class="items favorites" href="./Genres.html">GENRES</a> </li>|
             </ul>
         </nav>
+        
+            <form action="./search_result.html" method="GET">
+                <input class="formulario" type="search" name="buscador" placeholder="Serie, película...">
+                <input class="formulario" type="submit" value="Buscar">
+            </form>
 
-        <form class="contenedorformulario" method="post" target="_blank">
-            <input type="search" name="buscaddor" placeholder="Buscar">
-            <input type="submit" value="Buscar">
-        </form>
-
+       
     </header>
+
+
+
+    <footer>
+        <p class="footer"> Aldana Garnero  | Desmond Rattagan</p>    
+      </footer>
 </body>
 </html> 

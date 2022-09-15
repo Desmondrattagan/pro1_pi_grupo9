@@ -7,50 +7,56 @@
     <title>DETAILS</title>
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
-<body class="body">
+<body>
     <header class="header">
         <section>
-            <a href="./index.html"><img class="logo" src="./img/DEAL.png" alt="logo"></a> 
-         </section>
+           <a href="./Home.html"><img class="logo" src="./img/DEAL.png" alt="logo"></a> 
+        </section>
 
         <nav>
             <ul class="contenedoritems">
-                |<li class="items home"><a class="items home" href="./index.html">HOME</a> </li>|
+                |<li class="items home"><a class="items home" href="./Home.html">HOME</a> </li>|
                 <li class="items favorites"><a class="items favorites" href= "./Favorites.html"> FAVORITES</a></li>|
                 <li class="items genres"><a class="items favorites" href="./Genres.html">GENRES</a> </li>|
             </ul>
         </nav>
         
-        <form action="./search_result.html" method="GET">
-            <input type="search" name="buscador" placeholder="Serie, película...">
-            <input type="submit" value="Buscar">
-        </form>
+            <form action="./search_result.html" method="GET">
+                <input class="formulario" type="search" name="buscador" placeholder="Serie, película...">
+                <input class="formulario" type="submit" value="Buscar">
+            </form>
+
+       
     </header>
 
 
-    <section class="contenedordetails">
-        <article> <img src="./img/When-will-The-Sandman-.webp" alt=""></article>
+    <section class="contenedorimagen"> 
+
+        <article>
+            <img class="imagendetail" src="./img/greys detail.jpg" alt="Joker">
+        </article>
+    
+    </section>
+    
+    <section class="contenedortexto">
+            <article>
+                <h1 class="tituloserie">Grey's Anatomy</h1> 
+                <h2 class="datos">Rating: ★★★★★ </h2>
+                <h2 class="datos">Release date: 27 de marzo de 2005</h2>
+                <h2 class="datos">Seasons: 18 </h2>
+            </article>
+                
+            <article>
+                <p class="datos">Jake, who is paraplegic, replaces his twin on the Na'vi inhabited Pandora for a corporate mission. <br> After the natives accept him as one of their own, he must decide where his loyalties lie.</p>
+            </article>
+      
+    </section>
        
-    </section>
-    
-    <section class="contenedorinfodetails">
-          <h1>  The Sandman|05/08/2022|</h1> 
 
-          <h2>Rating: 7.8/10 </h2>
-          <h2> seasons:1 <br>
-            episodes:8 <br>
-            length: 50mins per episode
-            Genre: Superhero fiction, Drama, Horror fiction</h2>
-          <h2> </h2>
-          
-    </section>
     
-    <section class="contenedorsinopsisdetails">
-        <p class="parrafodetails">The Sandman is an American fantasy drama television series based on the 1989–1996 comic book written by Neil Gaiman and published by DC Comics. The series was developed by Gaiman, David S. Goyer, and Allan Heinberg for the streaming service Netflix, and is produced by DC Entertainment and Warner Bros. Television.</p>
-    </section>
-
-    <footer class="contenedorfooter">
+    <footer>
         <p class="footer"> Aldana Garnero  | Desmond Rattagan</p>
+    </footer>
       
     
   </footer>
