@@ -8,6 +8,7 @@ a{
     color:white;
 }
 
+/* Para el cuerpo de todas las páginas */
 body{
     color: white;
     background-image: url(../img/backgorund2.png);
@@ -24,7 +25,6 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    list-style-type: none;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
@@ -43,9 +43,6 @@ header{
 }
 
 .items{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     color: white;
     margin-left: 10px;
     margin-right: 10px;
@@ -65,6 +62,11 @@ header{
     background-repeat: no-repeat;
 }
 
+.titulo{
+    margin-left: 10px;
+    margin-top: 80px;
+}
+
 .containerPeliculas{
     display: flex;
     flex-wrap: wrap;
@@ -72,19 +74,12 @@ header{
     justify-content: left;
 }
 
-.titulo{
-    margin-left: 10px;
-    margin-top: 80px;
-}
-
-.imagenserie{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+.imagenes{
     height: 300px;
     margin-left: 40px;
     margin-right: 40px;
     margin-bottom: 15px;
+    width: 208px;
 } 
 
 .nombres{
@@ -111,6 +106,44 @@ header{
     margin-top: 15px;
 }
 
+/* Favorites */
+.tituloMyFavorite{
+    margin-left: 10px;
+    margin-top: 0px;
+    padding: 15px;
+    background-color:#583577;
+    margin-right: 10px ;
+    width: auto;
+}
+
+/* Genres */
+.contenedorGeneros{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 30px;
+}
+
+.itemgeneros{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(16, 15, 15, 0.696);
+    list-style-type: none;
+    padding: 15px;
+    width: 140px;
+    height: 55px;
+    margin: 25px;
+    border: double;
+    border-color: #583577;
+}
+
+.titulosGenres{
+    margin-top: 25px
+}
+
 /*Details*/
 .contenedordetails{
     display: flex;
@@ -133,6 +166,10 @@ header{
     background-color:rgba(16, 15, 15, 0.491);
     text-align: center;
     justify-content: center;
+}
+
+.listaDatos{
+    padding: 0%;
 }
 
 .datos{
@@ -167,62 +204,17 @@ header{
     margin-right: 150px;
 }
 
-/* Genero */
-.contenedorgenerospeliculas{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-top: 30px;
-}
-
-.itemgeneros{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgba(16, 15, 15, 0.696);
-    list-style-type: none;
-    padding: 15px;
-    width: 140px;
-    height: 55px;
-    margin: 25px;
-    border: double;
-    border-color: #583577;
-}
-
-.titulosGenres{
-    margin-top: 25px
-}
-
 /* Details genres */
-#iniciopaginageneros{
+#inicioDetailsGenres{
     background-image: url(../img/horror/Dont\ breath.jpg);
     height: 524px;
     background-size: 100%;
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat;   
 }
-
-
-
 
 /* Search result */
 .titulosearch{
     margin-left:  10px;
-}
-
-/* Favorites */
-.main-favorite{
-    height: 90vh;
-}
-.tituloMyFavorite{
-    margin-left: 10px;
-    margin-top: 0px;
-    padding: 15px;
-    background-color:#583577;
-    margin-right: 10px ;
-    width: auto;
 }
 
 /* Footer */
@@ -233,12 +225,18 @@ footer{
     flex-direction: row;
     color: white;
     font-size: 20px;
-    justify-content: center;  
-    margin-top: 0px;
+    justify-content: center;
 }
 
 
 
+
+
+
+
+
+
+/* Medida Tablet */
 @media(max-width:820px) {
     *{
         box-sizing: border-box;
@@ -423,7 +421,7 @@ footer{
     }
     
     /* Genero */
-    .contenedorgenerospeliculas{
+    .contenedorGeneros{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
