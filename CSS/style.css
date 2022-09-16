@@ -213,6 +213,9 @@ header{
 }
 
 /* Favorites */
+.main-favorite{
+    height: 90vh;
+}
 .tituloMyFavorite{
     margin-left: 10px;
     margin-top: 0px;
@@ -373,21 +376,26 @@ footer{
     .contenedortitulodetails{
         margin-right: 65px;
         margin-left: 65px;
+        width: 50%;
     }
     .titulodetails{
         font-size: 40px;
         padding: 10px;
-        background-color:rgba(16, 15, 15, 0.491);
+        background-color: rgba(16, 15, 15, 0.491);
         text-align: center;
         justify-content: center;
     }
     
+    .listaDatos{
+        padding: 0%;
+    }
+
     .datos{
         list-style-type: none;
     }
     
     .sinopsis{
-        width: 700px;
+        width: 100%;
         margin-bottom: 30px;
     }
     
