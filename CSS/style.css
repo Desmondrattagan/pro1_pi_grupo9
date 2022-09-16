@@ -17,6 +17,7 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* Header */
 header{
     background-color: rgba(16, 15, 15, 0.491);
     display: flex;
@@ -55,18 +56,14 @@ header{
     height: 25px;
 }
 
-/* Imagen principal */
+
+/* Home */
 #inicio{
     background-image: url("../img/8-xmen-movie-poster-design.jpg");
-    height: 480px;
+    height: 490px;
     background-size: 100%;
 }
 
-.cartelera{
-    padding-bottom: 20px;
-}
-
-/* Películas, series, mi lista */
 .containerPeliculas{
     display: flex;
     flex-wrap: wrap;
@@ -78,7 +75,6 @@ header{
     margin-left: 10px;
     margin-top: 80px;
 }
-
 
 .imagenserie{
     display: flex;
@@ -96,9 +92,7 @@ header{
     flex-direction: row;
     margin-left: 40px;
     margin-right: 40px;
-    justify-content: space-around;
-    margin-bottom: 15px;
-   
+    justify-content: space-around;   
 }
 
 .vermas{
@@ -112,9 +106,9 @@ header{
     height: 40px;
     margin-left: 40px;
     margin-right: 40px;
+    margin-bottom: 30px;
+    margin-top: 15px;
 }
-
-
 
 /*Details*/
 .contenedordetails{
@@ -141,17 +135,18 @@ header{
 }
 
 .datos{
-list-style-type: none;
+    list-style-type: none;
 }
+
 .sinopsis{
     width: 700px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
+
 .contenedorfavoritesdetails{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color:  rgba(16, 15, 15, 0.696);
     align-self: center;
     justify-content: center;
 }
@@ -164,66 +159,62 @@ list-style-type: none;
     padding: 15px;
     border-radius: 25px;
 }
+
 .trailer{
     margin-left: 150px;
     margin-top: 50px;
     margin-right: 150px;
 }
 
-
-
 /* Genero */
-
 .contenedorgenerospeliculas{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: space-evenly;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
 .itemgeneros{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     background-color: rgba(16, 15, 15, 0.696);
-    width: 140px;
-    height: 60px;
     list-style-type: none;
-    margin: 20px;
-
+    padding: 15px;
+    width: 140px;
+    height: 55px;
+    margin: 25px;
+    border: double;
+    border-color: #583577;
 }
 
+.titulosGenres{
+    margin-top: 25px
+}
 
-
-
-
-
-
-
+/* Details genres */
 #iniciopaginageneros{
     background-image: url(../img/Dont\ breath.jpg);
-    height: 608px;
+    height: 524px;
     background-size: 100%;
 }
-/* ? */
 
 
 /* Search result */
 
+/* Favorites */
+.tituloMyFavorite{
+    margin-left: 10px;
+    margin-top: 50px;
+    padding: 15px;
+    background-color:#583577;
+    margin-right: 10px ;
+    width: auto;
+}
 
-
-
-
-
-
-
-
-
-
-
+/* Ubicar */
 .contenedortexto{
     display: flex;
     flex-direction: column;
@@ -237,10 +228,7 @@ list-style-type: none;
     padding-right: 10px;
 }
 
-
-
-
-
+/* Footer */
 footer{
     background-color: rgba(16, 15, 15, 0.769);
     display: flex;
