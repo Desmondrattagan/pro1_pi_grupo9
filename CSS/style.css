@@ -116,64 +116,63 @@ header{
 
 
 
-
-
-
-
-
 /*Details*/
-.contenedorimagen{
+.contenedordetails{
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
-}
-
-.imagendetail{
-    height: 740px;
-    width: 610px;
-   
-}
-
-
-.contenedortexto{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    
-}
-
-.tituloserie{
-    font-size: 50px;
-    display: flex;
     flex-direction: row;
-    margin-bottom: 60px;
-    margin-top: 50px;
-    flex-wrap: wrap;
-    background-color: rgba(16, 15, 15, 0.696);
-    align-items: center;
-    width: 380px;
-    height: 110px;
+}
+
+.imagendetails{
+    height: 740px;
+    width: 610px;  
+}
+
+.contenedortitulodetails{
+    margin-right: 65px;
+    margin-left: 65px;
+}
+.titulodetails{
+    font-size: 40px;
+    padding: 10px;
+    background-color:rgba(16, 15, 15, 0.491);
+    text-align: center;
     justify-content: center;
 }
 
-
 .datos{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
-    
+list-style-type: none;
 }
+.sinopsis{
+    width: 700px;
+    margin-bottom: 20px;
+}
+.contenedorfavoritesdetails{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color:  rgba(16, 15, 15, 0.696);
+    align-self: center;
+    justify-content: center;
+}
+
+.botonfavorites{
+    font-size: large;
+    width: 250px;
+    height: 50px;
+    background-color:#583577;
+    padding: 15px;
+    border-radius: 25px;
+}
+.trailer{
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-right: 150px;
+}
+
 
 
 /* Genero */
-.contenedordetailsseries{
-    display: flex;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
 
 .contenedorgenerospeliculas{
     display: flex;
@@ -197,55 +196,11 @@ header{
 
 }
 
-.contenedorgenerosseries{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-top: 50px;
-}
 
-.contenedorimagen{
-    display: flex;
-    padding-top: 0px;
-    margin-top: 0;
-    align-items: top;
-}
 
-.contenedortexto{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    padding-right: 10px;
-}
 
-.contenedortexto2{
-    margin-top: 0px;
-    padding-left: 30px;
-    
-    justify-content: flex-start;
-}
 
-.contenedorsinopsis{
-    padding-left: 30px;
-    padding-right: 30px;
-}
 
-.contenedoraddtofavorites{
-    align-self: center;
-    padding: 30px;
-    width: 200px;
-    margin-left: 30px;
-    height: 70px;
-    background-color:blue;
-}
-
-.botonfavoritos{
-    font-size: large ;
-    display: flex;
-    align-self: center;
-
-}
 
 
 #iniciopaginageneros{
@@ -269,7 +224,18 @@ header{
 
 
 
-
+.contenedortexto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.contenedortexto{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-right: 10px;
+}
 
 
 

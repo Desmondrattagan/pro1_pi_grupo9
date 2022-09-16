@@ -8,66 +8,55 @@
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
-    <header class="header">
-        <section>
-           <a href="./Home.html"><img class="logo" src="./img/DEAL.png" alt="logo"></a> 
-        </section>
+        <header class="header">
+            <section>
+               <a href="./Home.html"><img class="logo" src="./img/DEAL.png" alt="logo"></a> 
+            </section>
+    
+            <nav>
+                <ul class="contenedoritems">
+                    |<li class="items home"><a class="items home" href="./Home.html">HOME</a> </li>|
+                    <li class="items favorites"><a class="items favorites" href= "./Favorites.html"> FAVORITES</a></li>|
+                    <li class="items genres"><a class="items favorites" href="./Genres.html">GENRES</a> </li>|
+                </ul>
+            </nav>
+            
+                <form action="./search_result.html" method="GET">
+                    <input class="formulario" type="search" name="buscador" placeholder="Serie, película...">
+                    <input class="formulario" type="submit" value="Buscar">
+                </form>
+    
+           
+        </header>
 
-        <nav>
-            <ul class="contenedoritems">
-                |<li class="items home"><a class="items home" href="./Home.html">HOME</a> </li>|
-                <li class="items favorites"><a class="items favorites" href= "./Favorites.html"> FAVORITES</a></li>|
-                <li class="items genres"><a class="items favorites" href="./Genres.html">GENRES</a> </li>|
-            </ul>
-        </nav>
-        
-            <form action="./search_result.html" method="GET">
-                <input class="formulario" type="search" name="buscador" placeholder="Serie, película...">
-                <input class="formulario" type="submit" value="Buscar">
-            </form>
-
+    <section class="contenedordetails"> 
        
-    </header>
-
- <section class="contenedoredetailsseries">
-    <section class="contenedorimagen"> 
-       
-        <article>
-            <img class="imagendetail" src="./img/greys detail.jpg" alt="Joker">
+        <article class="contenedorimagendetails">
+            <img class="imagendetails" src="./img/greys detail.jpg" alt="Greys">
         </article> 
-        
-        <section class="contenedortexto1">
-        <section class="contenedortexto2">
-            <article>
-                <h1 class="tituloserie">Grey's Anatomy</h1> 
-                <h2 class="datos">Rating: ★★★★★ </h2>
-                <h2 class="datos">Release date: 27 de marzo de 2005</h2>
-                <h2 class="datos">Seasons: 18 </h2>
-            </article> 
-       </section> 
-       
-       <section class="contenedorsinopsis">
-            <article>
-                <p class="datos">Surgical interns and their supervisors embark on a medical journey where they become part of heart-wrenching stories and make life-changing decisions in order to become the finest doctors.The series focuses on the lives of surgical interns, residents, and attendings as they develop into seasoned doctors while balancing personal and professional relationships. The title is an allusion to Gray's Anatomy, a classic human anatomy textbook first published in 1858 in London and written by Henry Gray.</p>
-            </article>
-      
-         </section>
-         <section class="contenedoraddtofavorites">
-            <article class="botonfavoritos"><a href=>Add to favorites</a> </article>
-                    </section>
-        </section>
+    
+
+        <article class="contenedortitulodetails">
+            <h1 class="titulodetails">Grey's Anatomy</h1> 
+            <ul class="listaDatos">
+                <li class="datos">Rating: ★★★★★</li>
+                <li class="datos">Release date: March 27th, 2005</li>
+                <li class="datos">Seasons: 18</li>
+                <li class="datos">Género: Drama</li>
+            </ul>
+            <p class="sinopsis">Surgical interns and their supervisors embark on a medical journey where they become part of heart-wrenching stories and make life-changing decisions in order to become the finest doctors.The series focuses on the lives of surgical interns, residents, and attendings as they develop into seasoned doctors while balancing personal and professional relationships. The title is an allusion to Gray's Anatomy, a classic human anatomy textbook first published in 1858 in London and written by Henry Gray.</p>
+            <a class="botonfavorites" href="Favorites.html" >💜 Add to favorites</a>
+            <br>
+            <iframe class="trailer" width="400" height="250" src="https://www.youtube.com/embed/q1pcpgREQ5c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </article>
     </section>
-
-    
    
-       
-
-    
     <footer>
         <p class="footer"> Aldana Garnero  | Desmond Rattagan</p>
     </footer>
       
     
-  </footer>
+
 </body>
 </html>
