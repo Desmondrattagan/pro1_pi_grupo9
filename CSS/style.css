@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/* Para los links */
 a{
     text-decoration: none;
     color:white;
@@ -55,7 +56,6 @@ header{
     border-radius: 10px;
     height: 25px;
 }
-
 
 /* Home */
 #inicio{
@@ -208,6 +208,9 @@ header{
 
 
 /* Search result */
+.titulosearch{
+    margin-left:  10px;
+}
 
 /* Favorites */
 .tituloMyFavorite{
@@ -217,20 +220,6 @@ header{
     background-color:#583577;
     margin-right: 10px ;
     width: auto;
-}
-
-/* Ubicar */
-.contenedortexto{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
-.contenedortexto{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    padding-right: 10px;
 }
 
 /* Footer */
