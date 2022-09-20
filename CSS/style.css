@@ -41,31 +41,31 @@ header{
     flex-direction: row;
     flex-wrap: nowrap;
     font-size: 20px;
+    margin: 0px 0px 0px 115px;
+    padding: 0%;
 }
 
 .items{
     color: white;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0px 10px 0px 10px;
     list-style-type: none;
 }
 
 .formulario{
-    border-radius: 10px;
+    border-radius: 100px;
     height: 25px;
 }
 
 /* Home */
 #inicio{
-    background-image: url("../img/8-xmen-movie-poster-design.jpg");
+    background-image: url("../img/peliculas/8-xmen-movie-poster-design.jpg");
     height: 490px;
     background-size: 100%;
     background-repeat: no-repeat;
 }
 
 .titulo{
-    margin-left: 10px;
-    margin-top: 80px;
+    margin: 55px 0px 0px 10px;
 }
 
 .containerPeliculas{
@@ -77,9 +77,7 @@ header{
 
 .imagenes{
     height: 270px;
-    margin-left: 28px;
-    margin-right: 28px;
-    margin-bottom: 15px;
+    margin: 30px 28px 15px 28px;
     width: 180px;
     transition: 0.1s ease-in-out;
 }
@@ -93,8 +91,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-left: 30px;
-    margin-right: 20px;
+    margin: 0px;
     justify-content: space-around;
     font-size: 13px;
 }
@@ -108,20 +105,15 @@ header{
     background-color: rgba(16, 15, 15, 0.696);
     width: 100px;
     height: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-bottom: 30px;
-    margin-top: 15px;
+    margin: 15px 40px 30px 40px;
 }
 
 /* Favorites */
 .tituloMyFavorite{
-    margin-left: 10px;
-    margin-top: 0px;
     padding: 15px;
-    background-color:#583577;
-    margin-right: 10px ;
+    background-color: #58357798;
     width: auto;
+    margin: 0px 10px 0px 10px;
 }
 
 /* Genres */
@@ -132,9 +124,12 @@ header{
     justify-content: space-evenly;
 }
 
+.listageneros{
+    padding: 0%;
+}
+
 .titulosGenres{
-    margin-left: 10px;
-    margin-top: 35px
+    margin: 25px 0px 0px 10px;
 }
 
 .itemgeneros{
@@ -164,42 +159,42 @@ header{
 }
 
 .contenedortitulodetails{
-    margin-right: 65px;
-    margin-left: 65px;
+    margin: 0px 55px 0px 55px;
 }
 
 .titulodetails{
-    font-size: 40px;
+    font-size: 38px;
     padding: 10px;
     background-color:rgba(16, 15, 15, 0.491);
     text-align: center;
     justify-content: center;
+    margin-bottom: 32px;
 }
 
 .listaDatos{
     padding: 0%;
     list-style-type: none;
+    margin-bottom: 33px;
+    font-size: 16px;
 }
 
 .sinopsis{
-    width: 700px;
     margin-bottom: 30px;
     text-align: justify;
+    font-size: 14px;
 }
 
 .botonfavorites{
     background-color:#583577;
     font-size: large;
-    width: 250px;
-    height: 50px;
-    padding: 15px;
+    width: 240px;
+    height: 40px;
+    padding: 12px;
     border-radius: 25px;
 }
 
 .trailer{
-    margin-left: 150px;
-    margin-top: 50px;
-    margin-right: 150px;
+    margin: 45px 150px 0px 150px;
 }
 
 /* Genre Details */
@@ -212,9 +207,7 @@ header{
 
 /* Search result */
 .titulosearch{
-    margin-left: 10px;
-    margin-top: 65px;
-    margin-bottom: 40px;
+    margin: 55px 0px 35px 10px;
 }
 
 .contenedorSearch{
@@ -222,11 +215,15 @@ header{
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: center;
+    background-color: #58357798;
+    padding: 45px;
+    width: 1000px;
+    margin: 0px 220px 0px 220px;
 }
 
 .imagenSerieSearch{
-    height: 540px;
-    width: 390px;
+    height: 550px;
+    width: 410px;
 }
 
 .contenedorTextoSearch{
@@ -234,22 +231,23 @@ header{
 }
 
 .tituloSerieSearch{
-    font-size: 30px;
-    padding: 10px;
+    font-size: 33px;
+    padding: 13px;
     background-color:rgba(16, 15, 15, 0.491);
     text-align: center;
     justify-content: center;
-    margin-bottom: 45px;
-    margin-top: 30px;
+    margin: 35px 0px 45px 0px;
 }
 
 .listaDatosSearch{
+    font-size: 19px;
     padding: 0%;
     list-style-type: none;
     margin-bottom: 40px;
 }
 
 .sinopsisSearch{
+    font-size: 15px;
     width: 410px;
     text-align: justify;
 }
@@ -314,13 +312,14 @@ footer{
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
+        padding: 0%;
+        margin: 0px 0px 0px 118px;
     }
     
     .items{
         color: white;
         font-size: 19px;
-        margin-left: 5px;
-        margin-right: 5px;
+        margin: 0px 5px 0px 5px;
         list-style-type: none;
     }
     
@@ -331,15 +330,14 @@ footer{
 
     /* Home */
     #inicio{
-        background-image: url("../img/8-xmen-movie-poster-design.jpg");
+        background-image: url("../img/peliculas/8-xmen-movie-poster-design.jpg");
         height: 280px;
         background-size: 100%;
         background-repeat: no-repeat;
     }
     
     .titulo{
-        margin-left: 15px;
-        margin-top: 40px;
+        margin: 60px 0px 15px 15px;
     }
 
     .containerPeliculas{
@@ -351,16 +349,12 @@ footer{
 
     .imagenes{
         height: 260px;
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-bottom: 10px;
-        margin-top: 10px;
+        margin: 25px 20px 10px 20px;
         width: 190px;
     } 
 
     .nombres{
-        margin-left: 20px;
-        margin-right: 20px;
+        margin: 0;
         font-size: 15px;
     }
 
@@ -370,21 +364,21 @@ footer{
 
     /* Favorites */
     .tituloMyFavorite{
-        margin-left: 10px;
-        margin-top: 0px;
+        margin: 0px 10px 0px 10px;
         padding: 15px;
         background-color:#583577;
-        margin-right: 10px ;
         width: auto;
     }
 
     /* Genres */
     .titulosGenres{
-        display: flex;
-        flex-direction: column;
-        margin-top: 35px;
-        text-align: center;
+        margin: 45px 0px 8px 10px;
         justify-content: center;
+    }
+
+    .listageneros{
+        padding: 0%;
+        margin: 0px;
     }
 
     .itemgeneros{
@@ -406,8 +400,7 @@ footer{
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        margin-right: 65px;
-        margin-left: 65px;
+        margin: 0px 65px 0px 65px;
     }
 
     .imagendetails{
@@ -420,8 +413,7 @@ footer{
         background-color: rgba(16, 15, 15, 0.491);
         text-align: center;
         justify-content: center;
-        margin-bottom: 50px;
-        margin-top: 60px;
+        margin: 60px 0px 45px 0px;
     }
 
     .datos{
@@ -432,7 +424,7 @@ footer{
     .sinopsis{
         font-size: 20px;
         width: 100%;
-        margin-top: 40px;
+        margin-top: 45px;
         text-align: justify;
     }
     
@@ -451,13 +443,9 @@ footer{
     }
     
     .trailer{
-        margin-left: 10px;
-        margin-top: 50px;
-        margin-right: 10px;
+        margin: 50px 10px 50px 10px;
         display: flex;
-        justify-content: center;
-        margin-bottom: 50px;
-        
+        justify-content: center;   
     }
     
     /* Genre Details */
@@ -469,7 +457,53 @@ footer{
     }
     
     /* Search result */
+    .titulosearch{
+        margin: 45px 0px 20px 10px;
+    }
     
+    .contenedorSearch{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #58357798;
+        padding: 15px;
+        width: 750px;
+        margin: 0px 30px 0px 33px;
+    }
+
+    .contenedorTextoSearch{
+        margin-left: 25px;
+    }
+    
+    .imagenSerieSearch{
+        height: 417px;
+        width: 285px;
+        margin: 20px 0px 10px 0px;
+    }
+    
+    .tituloSerieSearch{
+        font-size: 25px;
+        padding: 10px;
+        background-color:rgba(16, 15, 15, 0.491);
+        text-align: center;
+        justify-content: center;
+        margin: 20px 0px 28px 0px;
+    }
+    
+    .listaDatosSearch{
+        list-style-type: none;
+        margin-bottom: 28px;
+        font-size: 17px;
+    }
+    
+    .sinopsisSearch{
+        width: 370px;
+        text-align: justify;
+        font-size: 14px;
+        margin: 0px;
+    }
+
     /* Footer */
     footer{
         background-color: rgba(16, 15, 15, 0.769);
@@ -479,6 +513,6 @@ footer{
         color: white;
         font-size: 18px;
         justify-content: center;
-        margin-top: 30px;
+        margin-top: 35px;
     }
 }
