@@ -202,8 +202,8 @@ header{
 
 /* Genre Details */
 #inicioDetailsGenres{
-    background-image: url(../img/horror/Dont\ breath.jpg);
-    height: 524px;
+    background-image: url(../img/horror/PREMIERE.png);
+    height: 490px;
     background-size: 100%;
     background-repeat: no-repeat;   
 }
@@ -429,8 +429,8 @@ footer{
     
     /* Genre Details */
     #inicioDetailsGenres{
-        background-image: url(../img/horror/Dont\ breath.jpg);
-        height: 299px;
+        background-image: url(../img/horror/PREMIERE.png);
+        height: 280px;
         background-size: 100%;
         background-repeat: no-repeat;   
     }
