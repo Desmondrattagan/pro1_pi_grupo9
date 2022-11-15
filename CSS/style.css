@@ -79,12 +79,12 @@ header{
     height: 270px;
     margin: 30px 28px 15px 28px;
     width: 180px;
-    transition: 0.1s ease-in-out;
+    transition: 0.3s;
 }
 
 .imagenes:hover{
-    height: 285px;
-    width: 195px;
+    height: 275px;
+    width: 185px;
 }
 
 .nombres{
@@ -105,7 +105,7 @@ header{
     background-color: rgba(16, 15, 15, 0.696);
     width: 100px;
     height: 40px;
-    margin: 15px 40px 30px 40px;
+    margin: 15px 50px 30px 67px;
 }
 
 /* Favorites */
