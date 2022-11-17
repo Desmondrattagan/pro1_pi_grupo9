@@ -21,32 +21,30 @@
             </ul>
         </nav>
             
-        <form action="./search_result.html" method="GET">
-            <input class="formulario" type="search" name="buscador" placeholder="series, movies...">
-            <input class="formulario" type="submit" value="Search">
+        
+        <form id='form' action="./search_result.html" method="GET">
+            <input id= 'palabraPelicula' class="formulario" type="search" name="buscador" placeholder="series, movies...">
+            <button type="submit">Search</button>
         </form>
     </header>
 
-    <main class="main-favorite">
+    <main>
         <section class="contenedordetails"> 
             <article>
-                <img class="imagendetails" src="./img/series/greys detail.jpg" alt="Greys">
+                <img src="" alt="" class="imagendetails">
             </article> 
         
             <article class="contenedortitulodetails">
                 <h1 class="titulodetails"></h1> 
                 <ul class="listaDatos">
                     <li class="datos" id="calificacion"></li>
-                    <li class="datos" id="estreno">Release date: March 27th, 2005</li>
-                    <li class="datos" id="duracion">Seasons: 18</li>
-                    <li class="datos" id="genero"><a href="./Genre_details.html">Genre: Drama</a></li>
+                    <li class="datos" id="estreno"></li>
+                    <li class="datos" id="duracion"></li>
+                    <li class="datos" id="genero"><a href="./Genre_details.html"></a></li>
                     <li class="datos" id="plataformas"></li>
                 </ul>
-                <p class="sinopsis">Surgical interns and their supervisors embark on a medical journey where they become part of heart-wrenching stories and make life-changing decisions in order to become the finest doctors.The series focuses on the lives of surgical interns, residents, and attendings as they develop into seasoned doctors while balancing personal and professional relationships. The title is an allusion to Gray's Anatomy, a classic human anatomy textbook first published in 1858 in London and written by Henry Gray.</p>
+                <p class="sinopsis"></p>
                 <a class="botonfavorites" href="Favorites.html" >💜 Add to favorites</a>
-                <div class="trailer">
-                    <iframe  width="420" height="270" src="https://www.youtube.com/embed/q1pcpgREQ5c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
             </article>
         </section>
     </main>
@@ -56,5 +54,6 @@
     </footer>     
 
     <script type="text/javascript" src="./js/details_series.js"></script>
+    <script type="text/javascript" src="./js/validarForm.js"  ></script>
 </body>
 </html>

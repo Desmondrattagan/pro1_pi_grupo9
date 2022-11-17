@@ -5,7 +5,7 @@ let indice = qsObj.get('i');
 
 /* API */
 let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
-let urlPeliculas = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1/${indice}`;
+let urlSeries = `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}&language=en-US&page=1`;
 
 /* seleccionar todos los elementos del DOM */
 let imagen  = document.querySelector('.imagendetails');
@@ -18,7 +18,7 @@ let sinopsis = document.querySelector(".sinopsis");
 let plataformas = document.querySelector("#plataformas");
 
 /* COMPLETO EL HTML */
-fetch(urlPeliculas)
+fetch(urlSeries)
 .then(function(response){
     return response.json();
 
@@ -26,9 +26,9 @@ fetch(urlPeliculas)
     console.log(data.results[indice]);
     let array = data.results[indice];
     
-    titulo.innerText = array.title;
+    titulo.innerText = array.name;
     calificacion.innerText = "Rating: "  + array.vote_average;
-    estreno.innerText = "Release date: " + array.release_date;
+    estreno.innerText = "Release date: " + array.first_air_date;    ;
     /* duracion.innerText =
     genero.innerText = */
     sinopsis.innerText = array.overview;
@@ -39,6 +39,3 @@ fetch(urlPeliculas)
 }).catch(function (error) {
     return error;
 });
-
-
-/* ------------------------------------------------------------------------------------- */

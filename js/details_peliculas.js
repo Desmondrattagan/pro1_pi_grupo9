@@ -5,7 +5,7 @@ let indice = qsObj.get('i');
 
 /* API */
 let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
-let urlPeliculas = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1/${indice}`;
+let urlPeliculas = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`;
 
 /* seleccionar todos los elementos del DOM */
 let imagen  = document.querySelector('.imagendetails');
@@ -41,4 +41,3 @@ fetch(urlPeliculas)
 });
 
 
-/* ------------------------------------------------------------------------------------- */

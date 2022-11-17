@@ -22,9 +22,10 @@
             </ul>
         </nav>
         
-        <form action="./search_result.html" method="GET">
-            <input class="formulario" type="search" name="buscador" placeholder="series, movies...">
-            <input class="formulario" type="submit" value="Search">
+       
+        <form id='form' action="./search_result.html" method="GET">
+            <input id= 'palabraPelicula' class="formulario" type="search" name="buscador" placeholder="series, movies...">
+            <button type="submit">Search</button>
         </form>
     </header>
  
@@ -95,5 +96,6 @@
     </footer>
 
     <script type="text/javascript" src="./js/genres.js"></script>
+    <script type="text/javascript" src="./js/validarForm.js"  ></script>
 </body>
 </html>

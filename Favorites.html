@@ -21,82 +21,23 @@
             </ul>
         </nav>
         
-        <form action="./search_result.html" method="GET">
-            <input class="formulario" type="search" name="buscador" placeholder="series, movies...">
-            <input class="formulario" type="submit" value="Search">
+        
+        <form id='form' action="./search_result.html" method="GET">
+            <input id= 'palabraPelicula' class="formulario" type="search" name="buscador" placeholder="series, movies...">
+            <button type="submit">Search</button>
         </form>
     </header>
 
     <main>
         <h1 class="tituloMyFavorite">My favorites</h1>
         <h2 class="titulo">Favorite movies</h2>
-        <section class="containerPeliculas"><table>
-        </table>
-            <article class="peliculas">
-                <a href="./Details_peliculas.html"><img class="imagenes" src="./img/peliculas/avatarfinal.jpg" alt="Poster Avatar"></a>
-                <a class="nombres" href="./Details_peliculas.html">AVATAR</a>
-                <a class="nombres" href="./Details_peliculas.html">(2009)</a> 
-                <a class="vermas" href="./Details_peliculas.html">Details</a>
-            </article>
+        <section class="containerPeliculas" id="sectionFavoritos">
             
-            <article class="peliculas">
-                <a href="./Details_peliculas.html"><img class="imagenes" src="./img/peliculas/bohemian.jpg" alt="Poster Bohemian Rhapsody"></a>
-                <a class="nombres" href="./Details_peliculas.html">BOHEMIAN RHAPSODY</a> 
-                <a class="nombres" href="./Details_peliculas.html">(2018)</a>
-                <a class="vermas" href="./Details_peliculas.html">Details</a>
-            </article>
-            
-            <article class="peliculas">
-                <a href="./Details_peliculas.html"><img class="imagenes" src="./img/horror/the shining.jpg" alt="The shining"></a>
-                <a class="nombres" href="./Details_peliculas.html">THE SHINING</a>
-                <a class="nombres" href="./Details_peliculas.html">(1980)</a>
-                <a class="vermas" href="./Details_peliculas.htmll">Details</a>
-            </article>
         </section>
         
         <h2 class="titulo">Favorite series</h2>
         <section class="containerPeliculas">
-            <article>
-                <a href="./Details_series.html"><img class="imagenes" src="./img/horror/Haunting of hill house.jpg" alt="Haunting of hill house"></a>
-                <a class="nombres" href="./Details_series.html">HAUNTING OF HILL HOUSE</a> 
-                <a class="nombres" href="./Details_series.html">(2018)</a> 
-                <a class="vermas" href="./Details_series.html">Details</a>
-            </article>
-
-            <article>
-                <a href="./Details_series.html"><img class="imagenes" src="./img/series/gossip.jpg" alt="Gossip Girl"></a>
-                <a class="nombres" href="./Details_series.html">GOSSIP GIRL</a> 
-                <a class="nombres" href="./Details_series.html">(2007)</a> 
-                <a class="vermas" href="./Details_series.html">Details</a>
-            </article>
-
-            <article>
-                <a href="./Details_series.html"><img class="imagenes" src="./img/series/gambit.jpg" alt=" The Queen's Gambit"></a>
-                <a class="nombres" href="./Details_series.html"> THE QUEEN'S GAMBIT</a> 
-                <a class="nombres" href="./Details_series.html">(2020)</a> 
-                <a class="vermas" href="./Details_series.html">Details</a>
-            </article>
-
-            <article>
-                <a href="./Details_series.html"><img class="imagenes" src="./img/series/breakingbad.jpg" alt="Breaking bad"></a>
-                <a class="nombres" href="./Details_series.html">BREAKING BAD</a>
-                <a class="nombres" href="./Details_series.html">(2008)</a> 
-                <a class="vermas" href="./Details_series.html">Details</a>
-            </article>
-                
-            <article>
-                <a href="./Details_series.html"><img class="imagenes" src="./img/series/lossimuladores.jpg" alt="Los simuladores"></a>
-                <a class="nombres" href="./Details_series.html">LOS SIMULADORES</a>
-                <a class="nombres" href="./Details_series.html">(2002)</a> 
-                <a class="vermas" href="./Details_series.html">Details</a>
-            </article>
-                    
-            <article>
-                <a href="./Details_series.html"><img class="imagenes" src="./img/series/peaky.jpg" alt="Peaky Blinders"></a>
-                <a class="nombres" href="./Details_series.html">PEAKY BLINDERS</a>
-                <a class="nombres" href="./Details_series.html">(2013)</a> 
-                <a class="vermas" href="./Details_series.html">Details</a>
-            </article>
+          
         </section> 
     </main>                   
     
@@ -105,5 +46,6 @@
     </footer>
       
     <script type="text/javascript" src="./js/favorites.js"></script>
+    <script type="text/javascript" src="./js/validarForm.js"  ></script>
 </body>
 </html>

@@ -21,14 +21,15 @@
             </ul>
         </nav>
         
-        <form action="./search_result.html" method="GET">
-            <input class="formulario" type="search" name="buscador" placeholder="series, movies...">
-            <input class="formulario" type="submit" value="Search">
+        
+        <form id='form' action="./search_result.html" method="GET">
+            <input id= 'palabraPelicula' class="formulario" type="search" name="buscador" placeholder="series, movies...">
+            <button type="submit">Search</button>
         </form>
     </header>
 
     <main>
-        <h2 class="titulosearch">Results for: Breaking Bad</h2>
+        <h2 class="titulosearch"></h2>
         <section class="contenedorSearch">
             <article>
                 <img class="imagenSerieSearch" src="./img/series/breakingbad.jpg" alt="Breaking Bad">
@@ -97,5 +98,6 @@
     </footer>
 
     <script type="text/javascript" src="./js/search_result.js"></script>
+    <script type="text/javascript" src="./js/validarForm.js"  ></script>
 </body>
 </html> 
