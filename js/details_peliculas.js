@@ -1,30 +1,44 @@
-let contenedor = document.querySelector('.contenedordetails')
-let qs = location.search;               
+/* ID */
+let qs = location.search;
 let qsObj = new URLSearchParams(qs);   
-let idPersonaje = qsObj.get('id');     
+let indice = qsObj.get('i');  
 
-/* Peliculas */
-let portada = poster_path
-let titulo = title
-let calificacion = vote_average
-let estreno = release_date
-/* let duracion =  preguntar donde esta esto*/
-let sinopsis = overview
-/* let genero = genre_ids
-let plataformas = preguntar donde esta esto */
+/* API */
+let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
+let urlPeliculas = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1/${indice}`;
 
-contenedor.innerHTML= `<article>
-                                <img class="imagendetails" src="" alt="${titulo}">
-                        </article> 
+/* seleccionar todos los elementos del DOM */
+let imagen  = document.querySelector('.imagendetails');
+let titulo  = document.querySelector('.titulodetails');
+let calificacion = document.querySelector("#calificacion");
+let estreno = document.querySelector("#estreno");
+let duracion = document.querySelector("#duracion");
+let genero = document.querySelector("#genero");
+let sinopsis = document.querySelector(".sinopsis");
+let plataformas = document.querySelector("#plataformas");
 
-                        <article class="contenedortitulodetails">
-                                <h1 class="titulodetails">${titulo}</h1> 
-                                <ul class="listaDatos">
-                                    <li class="datos">${estreno}</li>
-                                    <li class="datos"></li>
-                                    <li class="datos"></li>
-                                    <li class="datos"><a href="./Genre_details.html">Genre: Comedy</a></li>
-                                </ul>
-                                <p class="sinopsis"></p>
-                                <a class="botonfavorites" href="Favorites.html" >💜 Add to favorites</a>
-                        </article>`
+/* COMPLETO EL HTML */
+fetch(urlPeliculas)
+.then(function(response){
+    return response.json();
+
+}).then(function(data){
+    console.log(data.results[indice]);
+    let array = data.results[indice];
+    
+    titulo.innerText = array.title;
+    calificacion.innerText = "Rating: "  + array.vote_average;
+    estreno.innerText = "Release date: " + array.release_date;
+    /* duracion.innerText =
+    genero.innerText = */
+    sinopsis.innerText = array.overview;
+    /* plataformas.innerText = array */
+    imagen.src = "https://image.tmdb.org/t/p/original/" + array.poster_path;
+
+    return data;
+}).catch(function (error) {
+    return error;
+});
+
+
+/* ------------------------------------------------------------------------------------- */

@@ -77,17 +77,17 @@ header{
 
 .imagenes{
     height: 270px;
-    margin: 30px 28px 15px 28px;
+    margin: 25px 28px 15px 32px;
     width: 180px;
 }
 
 .nombres{
-    /* display: flex;
+    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin: 0px;
     justify-content: space-around;
-    font-size: 13px; */
+    font-size: 14px;
     display:block;
     text-align: center;
 }
@@ -150,7 +150,7 @@ header{
 
 .imagendetails{
     height: 740px;
-    width: 610px;
+    width: 540px;
     margin: 0%;
 }
 
@@ -171,13 +171,13 @@ header{
     padding: 0%;
     list-style-type: none;
     margin-bottom: 33px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .sinopsis{
     margin-bottom: 30px;
     text-align: justify;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .botonfavorites{
@@ -260,7 +260,7 @@ footer{
     color: white;
     font-size: 20px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 
@@ -322,9 +322,7 @@ footer{
         flex-direction: row;
         justify-content: space-around;
     }
-    .peliculas{
-        justify-content: center;
-    }
+
     .imagenes{
         height: 260px;
         margin: 25px 20px 10px 20px;

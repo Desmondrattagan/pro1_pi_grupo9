@@ -9,22 +9,23 @@ fetch(urlPeliculas)
 
     }).then(function(data){
         let contenedor = document.querySelector('.Peliculas')
-        let usuario = data.results;
+        let array = data.results;
         let listaPeliculas = '';
-        console.log(usuario);
+        console.log(array);
 
         for (let i = 0; i <= 5; i++) {
-            let pelicula = data.results[i]; // Cambiar la ruta del <a>
-            let anio = pelicula.release_date.slice(0,4)
+            let pelicula = data.results[i];
+            let indicador = i
+            let año = pelicula.release_date.slice(0,4)
             listaPeliculas += `<article class="peliculas">
-                                                <a href="./details_peliculas.html?id=${pelicula.id}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${pelicula.poster_path}"></a>
-                                                
-                                                <a class="nombres" href="./details_peliculas.html">${pelicula.original_title}</a>
+                                    <a href="./details_peliculas.html?i=${indicador}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${pelicula.poster_path}"></a>
+                                    
+                                    <a class="nombres" href="./details_peliculas.html?i=${indicador}">${pelicula.title}</a>
 
-                                                <a class="nombres" href="./details_peliculas.html?id=${pelicula.id}">${anio}</a>
+                                    <a class="nombres" href="./details_peliculas.html?i=${indicador}">${año}</a>
 
-                                                <a class="vermas" href="./details_peliculas.html?id=${pelicula.id}">Ver mas</a>
-                                    </article >`
+                                    <a class="vermas" href="./details_peliculas.html?i=${indicador}">Ver mas</a>
+                                </article >`
             contenedor.innerHTML=listaPeliculas
         }
         return data;
@@ -39,23 +40,24 @@ fetch(urlSeries)
 
     }).then(function(data){
         let contenedor = document.querySelector('.Series')
-        let usuario = data.results;
+        let array = data.results;
         let listaSeries = '';
-        console.log(usuario);
+        console.log(array);
 
         for (let i = 0; i <= 5; i++) {
-            let serie = data.results[i]; // Cambiar la ruta del <a>
-            let anio = serie.first_air_date.slice(0,4)
+            let serie = data.results[i]; 
+            let indicador = i
+            let año = serie.first_air_date.slice(0,4)
             listaSeries += `<article class="peliculas">
-                                                <a href="./details_series.html?id=${serie.id}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${serie.poster_path}"></a>
+                                                <a href="./details_series.html?i=${indicador}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${serie.poster_path}"></a>
                                                 
-                                                <a class="nombres" href="./details_series.html">${serie.original_title}</a>
+                                                <a class="nombres" href="./details_series.html?i=${indicador}">${serie.name}</a>
 
-                                                <a class="nombres" href="./details_series.html">${anio}</a>
+                                                <a class="nombres" href="./details_series.html?i=${indicador}">${año}</a>
 
-                                                <a class="vermas" href="./details_series.html?idPelicula=${serie.id}">Ver mas</a>
+                                                <a class="vermas" href="./details_series.html?i=${indicador}">Ver mas</a>
                                     </article >`
-            contenedor.innerHTML=listaSeries
+        contenedor.innerHTML=listaSeries
         }
         return data;
     }).catch(function (error) {
@@ -69,23 +71,24 @@ fetch(urlVistas)
 
     }).then(function(data){
         let contenedor = document.querySelector('.Vistas')
-        let usuario = data.results;
+        let array = data.results;
         let listaVistas = '';
-        console.log(usuario);
+        console.log(array);
 
         for (let i = 0; i <= 5; i++) {
-            let vistas = data.results[i]; // Cambiar la ruta del <a>
-            let anio = vistas.release_date.slice(0,4)
+            let vistas = data.results[i];
+            let indicador = i
+            let año = vistas.release_date.slice(0,4)
             listaVistas += `<article class="peliculas">
-                                                <a href="./Details_peliculas.html"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${vistas.poster_path}"></a>
+                                                <a href="./Details_peliculas.html?i=${indicador}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${vistas.poster_path}"></a>
                                                 
-                                                <a class="nombres" href="./Details_peliculas.html">${vistas.original_title}</a>
+                                                <a class="nombres" href="./Details_peliculas.html?i=${indicador}">${vistas.title}</a>
 
-                                                <a class="nombres" href="./Details_peliculas.html">${anio}</a>
+                                                <a class="nombres" href="./Details_peliculas.html?i=${indicador}">${año}</a>
 
-                                                <a class="vermas" href="./detallePeliculas.html?idPelicula=${vistas.id}">Ver mas</a>
+                                                <a class="vermas" href="./detallePeliculas.html?i=${indicador}">Ver mas</a>
                                     </article >`
-            contenedor.innerHTML=listaVistas
+        contenedor.innerHTML=listaVistas
         }
         return data;
     }).catch(function (error) {
