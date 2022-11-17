@@ -77,14 +77,8 @@ header{
 
 .imagenes{
     height: 270px;
-    margin: 30px 28px 15px 28px;
+    margin: 25px 28px 15px 32px;
     width: 180px;
-    transition: 0.1s ease-in-out;
-}
-
-.imagenes:hover{
-    height: 285px;
-    width: 195px;
 }
 
 .nombres{
@@ -93,7 +87,9 @@ header{
     flex-direction: row;
     margin: 0px;
     justify-content: space-around;
-    font-size: 13px;
+    font-size: 14px;
+    display:block;
+    text-align: center;
 }
 
 .vermas{
@@ -105,7 +101,7 @@ header{
     background-color: rgba(16, 15, 15, 0.696);
     width: 100px;
     height: 40px;
-    margin: 15px 40px 30px 40px;
+    margin: 15px 50px 30px 67px;
 }
 
 /* Favorites */
@@ -154,7 +150,7 @@ header{
 
 .imagendetails{
     height: 740px;
-    width: 610px;
+    width: 540px;
     margin: 0%;
 }
 
@@ -175,13 +171,13 @@ header{
     padding: 0%;
     list-style-type: none;
     margin-bottom: 33px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .sinopsis{
     margin-bottom: 30px;
     text-align: justify;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .botonfavorites{
@@ -264,7 +260,7 @@ footer{
     color: white;
     font-size: 20px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 
@@ -322,7 +318,7 @@ footer{
 
     .containerPeliculas{
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         flex-direction: row;
         justify-content: space-around;
     }
@@ -336,7 +332,7 @@ footer{
     .nombres{
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row;
+        flex-direction: column;
         margin: 0px;
         justify-content: space-around;
         font-size: 15px;
