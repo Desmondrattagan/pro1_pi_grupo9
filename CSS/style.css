@@ -79,21 +79,17 @@ header{
     height: 270px;
     margin: 30px 28px 15px 28px;
     width: 180px;
-    transition: 0.3s;
-}
-
-.imagenes:hover{
-    height: 275px;
-    width: 185px;
 }
 
 .nombres{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin: 0px;
     justify-content: space-around;
-    font-size: 13px;
+    font-size: 13px; */
+    display:block;
+    text-align: center;
 }
 
 .vermas{
@@ -322,11 +318,13 @@ footer{
 
     .containerPeliculas{
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         flex-direction: row;
         justify-content: space-around;
     }
-
+    .peliculas{
+        justify-content: center;
+    }
     .imagenes{
         height: 260px;
         margin: 25px 20px 10px 20px;
@@ -336,7 +334,7 @@ footer{
     .nombres{
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row;
+        flex-direction: column;
         margin: 0px;
         justify-content: space-around;
         font-size: 15px;
