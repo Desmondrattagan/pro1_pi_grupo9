@@ -21,3 +21,4 @@ let objqs = new URLSearchParams(qs);
 let pelicula = objqs.get('buscador')
 let titulo = document.querySelector(".titulosearch")
 titulo.innerText = "Results for: " + pelicula
+
