@@ -1,4 +1,4 @@
-let recuperoStorage = localStorage.getItem('Favorites');
+let recuperoStorage = localStorage.getItem('favorites');
 let favoritos = JSON.parse(recuperoStorage);
 
 let section = document.querySelector("#sectionFavoritos");
@@ -28,22 +28,7 @@ else {
                                         <p>Name: <a href="./detallePersonaje.html?idPersonaje=${data.id}"> ${data.name}</a> </p>
                                         <p>Status: ${data.status} </p>
                                     </article>`;
-                                    <article class="peliculas">
-                                        <a href="./Details_peliculas.html"><img class="imagenes" src="./img/peliculas/avatarfinal.jpg" ></a>
-                                        <a class="nombres" href="./Details_peliculas.html"></a>
-                                        <a class="nombres" href="./Details_peliculas.html"></a> 
-                                        <a class="vermas" href="./Details_peliculas.html"></a>
-
-                                        `<article class="peliculas">
-                                    <a href="./details_peliculas.html?i=${indicador}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${pelicula.poster_path}"></a>
                                     
-                                    <a class="nombres" href="./details_peliculas.html?i=${indicador}">${pelicula.title}</a>
-
-                                    <a class="nombres" href="./details_peliculas.html?i=${indicador}">${año}</a>
-
-                                    <a class="vermas" href="./details_peliculas.html?i=${indicador}">Ver mas</a>
-                                </article >`
-                                    </article>
             section.innerHTML = personajesFavoritos;
 
             return data;
