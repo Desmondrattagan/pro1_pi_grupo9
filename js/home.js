@@ -13,7 +13,7 @@ fetch(urlPeliculas)
         let listaPeliculas = '';
         console.log(array);
 
-        for (let i = 0; i <= 5; i++) {
+        for (let i = 0; i < 5; i++) {
             let pelicula = array[i];
             let id = array[i].id
             let indicador = i
@@ -45,18 +45,19 @@ fetch(urlSeries)
         let listaSeries = '';
         console.log(array);
 
-        for (let i = 0; i <= 5; i++) {
-            let serie = data.results[i]; 
-            let indicador = i
+        for (let i = 0; i < 5; i++) {
+            let serie = data.results[i];
+            let id = array[i].id;
+            let indicador = i;
             let año = serie.first_air_date.slice(0,4)
             listaSeries += `<article class="peliculas">
-                                                <a href="./details_series.html?i=${indicador}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${serie.poster_path}"></a>
+                                                <a href="./details_series.html?i=${indicador}&id=${id}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${serie.poster_path}"></a>
                                                 
-                                                <a class="nombres" href="./details_series.html?i=${indicador}">${serie.name}</a>
+                                                <a class="nombres" href="./details_series.html?i=${indicador}&id=${id}">${serie.name}</a>
 
-                                                <a class="nombres" href="./details_series.html?i=${indicador}">${año}</a>
+                                                <a class="nombres" href="./details_series.html?i=${indicador}&id=${id}">${año}</a>
 
-                                                <a class="vermas" href="./details_series.html?i=${indicador}">Ver mas</a>
+                                                <a class="vermas" href="./details_series.html?i=${indicador}&id=${id}">Ver mas</a>
                                     </article >`
         contenedor.innerHTML=listaSeries
         }
@@ -76,18 +77,19 @@ fetch(urlVistas)
         let listaVistas = '';
         console.log(array);
 
-        for (let i = 0; i <= 5; i++) {
+        for (let i = 0; i < 5; i++) {
             let vistas = data.results[i];
-            let indicador = i
+            let id = array[i].id;
+            let indicador = i;
             let año = vistas.release_date.slice(0,4)
             listaVistas += `<article class="peliculas">
-                                                <a href="./Details_peliculas.html?i=${indicador}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${vistas.poster_path}"></a>
+                                                <a href="./Details_peliculas.html?i=${indicador}&id=${id}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${vistas.poster_path}"></a>
                                                 
-                                                <a class="nombres" href="./Details_peliculas.html?i=${indicador}">${vistas.title}</a>
+                                                <a class="nombres" href="./Details_peliculas.html?i=${indicador}&id=${id}">${vistas.title}</a>
 
-                                                <a class="nombres" href="./Details_peliculas.html?i=${indicador}">${año}</a>
+                                                <a class="nombres" href="./Details_peliculas.html?i=${indicador}&id=${id}">${año}</a>
 
-                                                <a class="vermas" href="./detallePeliculas.html?i=${indicador}">Ver mas</a>
+                                                <a class="vermas" href="./detallePeliculas.html?i=${indicador}&id=${id}">Ver mas</a>
                                     </article >`
         contenedor.innerHTML=listaVistas
         }

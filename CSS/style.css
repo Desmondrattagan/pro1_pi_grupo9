@@ -72,13 +72,20 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: left;
+    justify-content: center;
+}
+
+.peliculas{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .imagenes{
-    height: 270px;
-    margin: 25px 28px 15px 32px;
-    width: 180px;
+    height: 290px;
+    margin: 25px 35px 15px 35px;
+    width: 200px;
 }
 
 .nombres{
@@ -88,7 +95,6 @@ header{
     margin: 0px;
     justify-content: space-around;
     font-size: 14px;
-    display:block;
     text-align: center;
 }
 
@@ -101,7 +107,7 @@ header{
     background-color: rgba(16, 15, 15, 0.696);
     width: 100px;
     height: 40px;
-    margin: 15px 50px 30px 67px;
+    margin: 15px 0px 30px 0px;
 }
 
 /* Favorites */
@@ -141,12 +147,12 @@ header{
     align-items: center;
     background-color: rgba(16, 15, 15, 0.696);
     padding: 25px;
-    width: 190px;
-    height: 60px;
-    margin: 20px 30px 25px 30px;
+    width: 195px;
+    height: 65px;
+    margin: 20px 30px 20px 30px;
     border: double;
     border-color: #583577;
-    font-size: 1px;
+    font-size: 14px;
 }
 
 /*Details*/
@@ -194,11 +200,12 @@ header{
 
 .botonfavorites{
     background-color:#583577;
-    font-size: large;
-    width: 240px;
-    height: 40px;
+    width: 210px;
+    height: 55px;
     padding: 12px;
     border-radius: 25px;
+    color: white;
+    font-size: 15px;
 }
 
 .trailer{
@@ -332,7 +339,14 @@ footer{
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
+    }
+
+    .peliculas{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     .imagenes{

@@ -2,10 +2,11 @@
 let qs = location.search;
 let qsObj = new URLSearchParams(qs);   
 let indice = qsObj.get('i');  
+let id = qsObj.get('id'); 
 
 /* API */
 let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
-let urlSeries = `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}&language=en-US&page=1`;
+let urldetalle = `https://api.themoviedb.org/3/tv/${id}?api_key=${api_key}&language=en-US`;
 
 /* seleccionar todos los elementos del DOM */
 let imagen  = document.querySelector('.imagendetails');
@@ -18,22 +19,14 @@ let sinopsis = document.querySelector(".sinopsis");
 let plataformas = document.querySelector("#plataformas");
 
 /* COMPLETO EL HTML */
-fetch(urlSeries)
+fetch(urldetalle)
 .then(function(response){
     return response.json();
 
 }).then(function(data){
-    console.log(data.results[indice]);
-    let array = data.results[indice];
     
-    titulo.innerText = array.name;
-    calificacion.innerText = "Rating: "  + array.vote_average;
-    estreno.innerText = "Release date: " + array.first_air_date;    ;
-    /* duracion.innerText =
-    genero.innerText = */
-    sinopsis.innerText = array.overview;
-    /* plataformas.innerText = array */
-    imagen.src = "https://image.tmdb.org/t/p/original/" + array.poster_path;
+    
+    
 
     return data;
 }).catch(function (error) {

@@ -1,42 +1,46 @@
-let recuperoStorage = localStorage.getItem('favorites');
-let favoritos = JSON.parse(recuperoStorage);
+let storage = localStorage.getItem('lista_favoritos');
+let lista_favoritos = JSON.parse(storage);
+console.log(lista_favoritos)
 
-let section = document.querySelector("#sectionFavoritos");
+let section = document.querySelector(".peliculasFavoritas");
 
-let personajesFavoritos = '';
+let elementosFavoritos = '';
 
-console.log(favoritos)
 
-if (favoritos == null || favoritos.length == 0) {
-    section.innerHTML = '<p>No hay personajes en favoritos</p>'
+if (lista_favoritos == null || lista_favoritos.length == 0) {
+    section.innerHTML = '<p>No hay películas en favoritos</p>'
 }
 else {
     
-    for (let i = 0; i < favoritos.length; i++) {
+    for (let i = 0; i < lista_favoritos.length; i++) {
         let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
-        let urlPeliculas = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`;
-
-        fetch(urlPeliculas)
+        let urlPeliculaFavorita = `https://api.themoviedb.org/3/movie/${lista_favoritos[i]}?api_key=${api_key}&language=en-US`;
+        
+        fetch(urlPeliculaFavorita)
         .then(function (response) {
             return response.json();
+
         }).then(function (data) {
+            console.log(data)
             let pelicula = data.results[i];
-            let indicador = i
-            let año = pelicula.release_date.slice(0,4)
-            personajesFavoritos += `<article>
-                                        <img src=${data.image} alt='${data.name}' />
-                                        <p>Name: <a href="./detallePersonaje.html?idPersonaje=${data.id}"> ${data.name}</a> </p>
-                                        <p>Status: ${data.status} </p>
-                                    </article>`;
-                                    
-            section.innerHTML = personajesFavoritos;
+            let id = array[i].id;
+            let indicador = i;
+            let año = pelicula.release_date.slice(0,4);
+            elementosFavoritos += `<article class="peliculas">
+                                        <a href="./Details_peliculas.html?i=${indicador}&id=${id}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${vistas.poster_path}"></a>
+                                                
+                                        <a class="nombres" href="./Details_peliculas.html?i=${indicador}&id=${id}">${vistas.title}</a>
+
+                                        <a class="nombres" href="./Details_peliculas.html?i=${indicador}&id=${id}">${año}</a>
+
+                                        <a class="vermas" href="./detallePeliculas.html?i=${indicador}&id=${id}">Ver mas</a>
+                                    </article >`;
+            section.innerHTML = elementosFavoritos;
 
             return data;
         }).catch(function (error) {
             return error;
         });
 
-        
-        
     }
 }
