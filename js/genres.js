@@ -17,7 +17,7 @@ fetch(urlGenresPeliculas)
             let nombreGenero = genero.name;
             let idGenero = genero.id;
             listaGenresPeliculas += `<article class="genero">
-                                        <li class="itemgeneros"><a href="./Genre_details.html">${nombreGenero}</a></li>                                    
+                                        <li class="itemgeneros"><a href="./genre_details.html?id=${idGenero}"">${nombreGenero}</a></li>                                    
                                     </article>`
             contenedor.innerHTML=listaGenresPeliculas
         }
@@ -41,7 +41,7 @@ fetch(urlGenresSeries)
         let nombreGenero = genero.name;
         let idGenero = genero.id;
         listaGenresPeliculas += `<article class="genero">
-                                    <li class="itemgeneros"><a href="./Genre_details.html">${nombreGenero}</a></li>                                    
+                                    <li class="itemgeneros"><a href="./Genre_details.html?id=${idGenero}"">${nombreGenero}</a></li>                                    
                                 </article>`
         contenedor.innerHTML=listaGenresPeliculas
     }
