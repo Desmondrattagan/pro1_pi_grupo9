@@ -230,6 +230,20 @@ header{
     margin: 45px 0px 35px 10px;
 }
 
+#plataformas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.plataformas{
+    width: 20px;
+    height: 30px;
+    margin: 10px 20px 10px 20px;
+    justify-content: space-evenly;
+    
+}
+
 /* Genre Details */
 #inicioDetailsGenres{
     background-image: url(../img/horror/PREMIERE.png);

@@ -7,7 +7,7 @@ let id = qsObj.get('id');
 let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
 let urlDetalle = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US&append_to_response=palabrabuscar`;
 let urlTrailer = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}&language=en-US`;
-let urlPlataformas = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${api_key}`
+let urlPlataformas = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${api_key}` 
 
 /* seleccionar todos los elementos del DOM */
 let imagen          = document.querySelector('.imagendetails');
@@ -65,12 +65,28 @@ fetch(urlPlataformas)
 
 }).then(function(data){
     let array = data.results;
-    console.log(data)
+    console.log(data.results)
     let nombres = Object.keys(array)
     let texto = ""
-    let clave = nombres[i]
-    let logo = array.clave
-
+    for(let i=0; i < nombres.length; i++){
+        let lista_rent_buy = Object.keys(array[nombres[i]])
+        let clave = nombres[i]
+        if (lista_rent_buy.includes("buy")){
+            texto += `<div class="plataformas">
+                            <img class="imagenes" src="https://image.tmdb.org/t/p/original/${data.results[clave].buy[i].logo_path}"></a>
+                      </div >`
+            plataformas.innerHTML=texto
+            }
+            
+        else if(lista_rent_buy.includes("rent")){
+            texto += `<div class="plataformas">
+                        <img class="imagenes" src="https://image.tmdb.org/t/p/original/${data.results[clave].rent[i].logo_path}"></a>
+                  </div>`
+            plataformas.innerHTML=texto
+        }
+    }
+        
+    
 }).catch(function (error) {
     return error;
 });
