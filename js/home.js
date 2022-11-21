@@ -3,6 +3,28 @@ let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
 let urlPeliculas = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`;
 let urlSeries = `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}&language=en-US&page=1`
 let urlVistas = `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=1`
+let urlAir = `https://api.themoviedb.org/3/movie/airing_today?api_key=${api_key}&language=en-US&page=1`
+
+// Slider
+fetch(urlSeries)
+    .then(function(response){
+        return response.json();
+
+    }).then(function(data){
+        let contenedor = document.getElementById('slider')
+        let array = data.results;
+        let listaPeliculas = '';
+
+        for (let i = 0; i < 8; i++) {
+            let pelicula = array[i];
+            let id = array[i].id
+            listaPeliculas += '<div class=carrou> <a href="./details_series.html?id='+id+'"> <img class="imgCarrou" src="https://image.tmdb.org/t/p/original/'+pelicula.poster_path+'" width="" height="" alt=""></a></div>'
+            contenedor.innerHTML=listaPeliculas
+        }return data;
+
+    }).catch(function (error) {
+        return error;
+});
 
 /* Películas */
 fetch(urlPeliculas)
