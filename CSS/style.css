@@ -36,6 +36,12 @@ header{
    margin-left: 20px;
 }
 
+
+.logo2{
+    height: 40px;
+    
+ }
+
 .contenedoritems{
     display: flex;
     flex-direction: row;
