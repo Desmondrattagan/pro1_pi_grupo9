@@ -32,32 +32,69 @@
         <section class="contenedordetails">
             <article class="contenedorimagendetails">
                 <img src="" alt="" class="imagendetails">
-            </article> 
 
-            <article class="contenedortitulodetails">
-                <h1 class="titulodetails"></h1> 
-                <ul class="listaDatos">
-                    <li class="datos" id="calificacion"></li>
-                    <li class="datos" id="estreno"></li>
-                    <li class="datos" id="duracion"></li>
-                    <li class="datos" id="genero"></li>
-                </ul>
-
-                <p class="datos" id="plataformas"></p>
-                 
-                <p class="sinopsis"></p>
-            
                 <button class="botonfavorites">
                     💜 Add to favorites
                 </button>
+            </article> 
+
+            <article class="contenedortitulodetails">
                 
-                <div class="containerTrailer"> </div>
             </article>
         </section>
-    </main>
+
+        <section class="contenedorTrailer">
+            
+        </section>
+
+
+
+
+
+    </section>
+        <button class="reco-button" type="submit">Show Similar</button>
+
+        
+        <div class="modal" id="reco-modal">
+            <div class="modal-content">
+
+                <span class="close close-reco" title="Close Modal">×</span>
+
+                <section class="series-recomendadas">
+                        <div class="titulo-series-recomendadas">
+                        <h1>Similar TV Shows</h1>
+                        </div>
+                        <div>
+                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
+                            uk-slider="autoplay: true; autoplay-interval: 3000">
+                            <ul class="listado-series-recomendadas uk-slider-items uk-child-width-1-3@s uk-child-width-1-4@m">
+                            </ul>
+                            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                            uk-slider-item="previous"></a>
+                            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                            uk-slider-item="next"></a>
+                        </div>
+                        </div>
+                </section>
+
+                </div>
+                <div>
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true; autoplay-interval: 3000">
+                    <ul class="listado-series-recomendadas uk-slider-items uk-child-width-1-3@s uk-child-width-1-4@">
+                    </ul>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                    uk-slider-item="next"></a>
+            </div>
+        </div>
+    </section>
+
+        
+        
+    
 
     <footer>
-        <p> Aldana Garnero  | Desmond Rattagan</p>
+        <p> Aldana Garnero | Desmond Rattagan</p>
     </footer>
       
     <script type="text/javascript" src="./js/details_peliculas.js"></script>
