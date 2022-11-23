@@ -136,22 +136,10 @@ fetch(recomendaciones)
                                 </div>
                                
                             </article >`
-
-            botClose.style.display = "block"
     }
 })
     }
 }
-
-botClose.onclick = function(event) {
-    botRec.style.display = "block"
-    botClose.style.display = "none"
-}
-
-
-
-
-
 
 
 /* BOTON FAVORITOS */
