@@ -6,16 +6,13 @@ form.addEventListener('submit', function(evento) {
     evento.preventDefault();
 
     if (input.value == "") {
-        alert('No puedes enviar un form vacio');
+        alert('It is not possible to send an empty form');
     } else if(input.value.length <3){
-        alert('Debes escribir mas de 3 caracteres');
+        alert('More than three characters must be written');
     } else {
         form.submit();
     }
 })
- 
-
-
 
 /* PAGINA- resultado de busqueda */
 let qs = location.search;
@@ -37,7 +34,6 @@ fetch(urlbusqueda)
     if (listaResultados.length !== 0){
         for( var i = 0; i < listaResultados.length; i++) {
         id = listaResultados[i].id;
-        console.log(listaResultados)
         /* Peliculas */
         if (Object.keys(listaResultados[i]).includes("release_date")) {
             let anniopeli = listaResultados[i].release_date.slice(0,4);
@@ -66,7 +62,7 @@ fetch(urlbusqueda)
 
                                                 <a class="vermas" href="./details_series.html?id=${id}">Ver mas</a>
 
-                                             </article >`
+                                            </article >`
             }
         }
     }else {

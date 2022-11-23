@@ -6,7 +6,6 @@ let id = qsObj.get('id');
 /* API */
 let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
 let urlDetalle = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US&append_to_response=palabrabuscar`;
-let urlPlataformas = `https://api.themoviedb.org/3/watch/providers/movie?api_key=${api_key}&language=en-US`;
 
 /* seleccionar todos los elementos del DOM */
 let imagen     = document.querySelector('.imagendetails');
@@ -35,13 +34,14 @@ fetch(urlDetalle)
                        </ul>
                     <p class="sinopsis">${data.overview}</p>
                     <div class="plataformasdiv"></div>`
-        contenedor.innerHTML=textodetail
+        contenedor.innerHTML=textodetail;
     
 }).catch(function (error) {
     return error;
 });
 
 /* PLATAFORMAS */
+let urlPlataformas = `https://api.themoviedb.org/3/watch/providers/movie?api_key=${api_key}&language=en-US`;
 fetch(urlPlataformas)
 .then(function(response) {
     return response.json();
@@ -53,7 +53,7 @@ fetch(urlPlataformas)
     for(let i=0; i < 12; i++){
         texto += `<img class="plataformas" src="https://image.tmdb.org/t/p/original/${array[i].logo_path}"></a>`
     }
-    plataformas.innerHTML=texto
+    plataformas.innerHTML=texto;
 
 }).catch(function (error) {
     return error;
@@ -69,47 +69,38 @@ fetch(urlTrailer)
         return response.json();
 
     }).then(function(infoTrailer){
-        console.log(infoTrailer)
         if (infoTrailer.results.length > 0) {
             for(let i=0; i < infoTrailer.results.length ; i++){ 
-                let trailer = infoTrailer.results[i]
+                let trailer = infoTrailer.results[i];
                 if (trailer.key != undefined){
-                    let video = infoTrailer.results[i].key
+                    let video = infoTrailer.results[i].key;
                     videos += `<p class="titulosTrailer">${infoTrailer.results[i].name}</p>
                     <article class="trailer">
                                 <iframe src="https://www.youtube.com/embed/${video}" title="YouTube video player" width=491px height=230px frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </article>`
                 }
             }
-
-        let botTrailer = document.querySelector(".Trailer")
+        let botTrailer = document.querySelector(".Trailer");
         botTrailer.addEventListener("click", function() {
                 if(botTrailer.innerHTML == "See trailers") {
-                    this.innerText = "Close trailers"
-                    trailers.innerHTML = videos
+                    this.innerText = "Close trailers";
+                    trailers.innerHTML = videos;
                 }else {
-                    this.innerText = "See trailers"
-                    trailers.innerHTML = ""
+                    this.innerText = "See trailers";
+                    trailers.innerHTML = "";
                 }
             })
-    
     }else {
-        trailers.innerText = "NO TRAILER AVAILABLE"
+        trailers.innerText = '<p class="sinFavoritos">No trailer available</p>';
        }
     }).catch(function(error){
     return error;
 })
 
 /* RECOMENDACIONES  */
-let botRec = document.querySelector("#recom")
-let botClose = document.querySelector("#recomClose")
-
-
-botRec.onclick = function(event) {
-    
-    if(event.target == recom) {
-        recom.style.display = "none"
-        let recomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`
+let peliculas = document.querySelector(".containerPeliculas");
+let contenido = "";
+let recomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`;
 
 fetch(recomendaciones)
     .then(function (respuesta) {
@@ -117,13 +108,11 @@ fetch(recomendaciones)
     })
     .then(function (informacion) {
         for (let i=0; i<5; i++) {
-            let id = informacion.results[i].id
-            let title = informacion.results[i].title
+            let id = informacion.results[i].id;
+            let title = informacion.results[i].title;
             let annio = informacion.results[i].release_date.slice(0,4);
-            let poster = `https://image.tmdb.org/t/p/original/${informacion.results[i].poster_path}`
-
             contenido +=  `<article class="peliculas">
-                                <a href="./Details_peliculas.html?id=${id}"> <img class="imagenes" src="${poster}"></a>
+                                <a href="./Details_peliculas.html?id=${id}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${informacion.results[i].poster_path}"></a>
                                 
                                 <a class="nombres" href="./Details_peliculas.html?id=${id}">${title}</a>
 
@@ -136,16 +125,24 @@ fetch(recomendaciones)
                                 </div>
                                
                             </article >`
+
+            let botRec = document.querySelector(".Recom");
+            botRec.addEventListener("click", function() {
+                if(botRec.innerHTML == "See recommendations") {
+                    this.innerText = "Close recommendations";
+                    peliculas.innerHTML = contenido;
+                }else {
+                    this.innerText = "See recommendations";
+                    peliculas.innerHTML = "";
+                }
+            })
     }
 })
-    }
-}
-
 
 /* BOTON FAVORITOS */
 let lista_peliculas_favoritas = []; 
-let storage = localStorage.getItem('lista_peliculas_favoritas')
-let favoritos = document.querySelector(".botonfavorites")
+let storage = localStorage.getItem('lista_peliculas_favoritas');
+let favoritos = document.querySelector(".botonfavorites");
 
 if(storage != null){
     lista_peliculas_favoritas = JSON.parse(storage);
@@ -156,7 +153,7 @@ if (lista_peliculas_favoritas.includes(id)) {
 }
 
 favoritos.addEventListener("click", function(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     if(lista_peliculas_favoritas.includes(id)){
         let indice = lista_peliculas_favoritas.indexOf(id);
@@ -168,7 +165,7 @@ favoritos.addEventListener("click", function(e) {
     }
 
     let favToString = JSON.stringify(lista_peliculas_favoritas);
-    localStorage.setItem('lista_peliculas_favoritas',favToString)
+    localStorage.setItem('lista_peliculas_favoritas',favToString);
 
 })
 

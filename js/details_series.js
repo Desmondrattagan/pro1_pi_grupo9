@@ -1,3 +1,19 @@
+/* BUSCADOR (form) */
+let form = document.querySelector('#form');
+let input = document.querySelector('#palabraPelicula');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    if(input.value == "") {
+        alert('No puedes enviar un form vacio');
+    } else if(input.value.length <3) {
+        alert('Debes escribir mas de 3 caracteres');
+    } else {
+        form.submit();
+    }
+})
+
 /* ID */
 let qs = location.search;
 let qsObj = new URLSearchParams(qs);    
@@ -6,79 +22,147 @@ let id = qsObj.get('id');
 /* API */
 let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
 let urldetalle = `https://api.themoviedb.org/3/tv/${id}?api_key=${api_key}&language=en-US`;
-let urlTrailer = `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${api_key}&language=en-US`
 
-/* seleccionar todos los elementos del DOM */
-let imagen          = document.querySelector('.imagendetails');
-let titulo          = document.querySelector('.titulodetails');
-let sinopsis        = document.querySelector('.sinopsis');
-let trailer         = document.querySelector('.containerTrailer');
-let favoritos       = document.querySelector('.botonfavorites');
-/* Datos */
-let calificacion    = document.querySelector('#calificacion');
-let estreno         = document.querySelector('#estreno');
-let duracion        = document.querySelector('#duracion');
-let genero          = document.querySelector('#genero');
-let plataformas     = document.querySelector('#plataformas');
+/* SELECCIONO LOS ELEMENTOS DEL DOM */
+let imagen     = document.querySelector('.imagendetails');
+let contenedor = document.querySelector('.contenedortitulodetails');
 
 /* COMPLETO EL HTML */
 fetch(urldetalle)
-    .then(function(response){
-        return response.json();
+.then(function(response) {
+    return response.json();
 
-    }).then(function(data){
-        titulo.innerText = data.name;
-        sinopsis.innerText = data.overview;
-        calificacion.innerText = "Rating: "  + data.vote_average;
-        estreno.innerText = "Release date: " + data.first_air_date;
-        let generos = data.genres
-        let texto = ""
-        for (let i = 0; i < generos.length ; i++){
-            texto += generos[i].name + " "
-        }
-        genero.innerText = "Genres: " + texto /* <a href="./Genre_details.html"></a> */
-        imagen.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`
-
-    }).catch(function (error) {
-        return error;
+}).then(function(data) {
+    console.log(data);
+    //portada
+    imagen.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
+    //generos
+    let generos = data.genres;
+    let textogenero = "";
+    for (let i = 0; i < generos.length ; i++) {
+        textogenero += `<a class="datos" href="./genre_details.html?id=${id}&name=${generos[i].name}">•${generos[i].name} </a>` 
+    }
+    let textodetail = `<h1 class="titulodetails">${data.name}</h1> 
+                       <ul class="listaDatos">
+                            <li class="datos" id="calificacion">Rating: ${data.vote_average}</li>
+                            <li class="datos" id="estreno">Release date: ${data.first_air_date}</li>
+                            <li class="datos" id="genero">Generos: ${textogenero}</li>
+                       </ul>
+                    <p class="sinopsis">${data.overview}</p>
+                    <div class="plataformasdiv"></div>`
+        contenedor.innerHTML=textodetail;
+    
+}).catch(function (error) {
+    return error;
 });
 
-    
+/* PLATAFORMAS */
+let urlPlataformas = `https://api.themoviedb.org/3/watch/providers/tv?api_key=${api_key}&language=en-US`;
+fetch(urlPlataformas)
+.then(function(response) {
+    return response.json();
+
+}).then(function(data) {
+    let plataformas = document.querySelector('.plataformasdiv');
+    let array = data.results;
+    let texto = `<h2 class="titulo" >Providers:</h2>`
+    for(let i=0; i < 12; i++){
+        texto += `<img class="plataformas" src="https://image.tmdb.org/t/p/original/${array[i].logo_path}"></a>`
+    }
+    plataformas.innerHTML=texto;
+
+}).catch(function (error) {
+    return error;
+});
+
+/* TRAILER */
+let trailers = document.querySelector(".videos");
+let videos = "";
+let urlTrailer = `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${api_key}&language=en-US`;
+
 fetch(urlTrailer)
-    .then(function(response){
+    .then(function(response) {
         return response.json();
 
     }).then(function(infoTrailer){
-        console.log(infoTrailer)
         if (infoTrailer.results.length > 0) {
-            let texto = ""
-            for(let i=0; i < 1; i++){ 
-                let trailer = infoTrailer.results[i]
+            for(let i=0; i < infoTrailer.results.length ; i++){ 
+                let trailer = infoTrailer.results[i];
                 if (trailer.key != undefined){
-                    let video = infoTrailer.results[i].key
-                    console.log(video)
-                    texto += `<article class="trailer">
-                                    <iframe src="https://www.youtube.com/embed/${video}" title="YouTube video player" width=400px height=200px frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </article>`
-                
+                    let video = infoTrailer.results[i].key;
+                    videos += `<p class="titulosTrailer">${infoTrailer.results[i].name}</p>
+                    <article class="trailer">
+                                <iframe src="https://www.youtube.com/embed/${video}" title="YouTube video player" width=491px height=230px frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </article>`
                 }
             }
-
-            trailer.innerHTML = texto
-    
-        }else {
-            trailer.innerText = "NO HAY TRAILER DISPONIBLE"   
-        }
+        let botTrailer = document.querySelector(".Trailer");
+        botTrailer.addEventListener("click", function() {
+                if(botTrailer.innerHTML == "See trailers") {
+                    this.innerText = "Close trailers";
+                    trailers.innerHTML = videos;
+                }else {
+                    this.innerText = "See trailers";
+                    trailers.innerHTML = "";
+                }
+            })
+    }else {
+        trailers.innerText = trailers.innerText = '<p class="sinFavoritos">No trailer available</p>';
+       }
     }).catch(function(error){
     return error;
 })
 
+/* RECOMENDACIONES  */
+let peliculas = document.querySelector(".containerPeliculas");
+let contenido = "";
+let recomendaciones = `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`;
+
+fetch(recomendaciones)
+    .then(function (respuesta) {
+            return respuesta.json();
+    })
+    .then(function (informacion) {
+        console.log(informacion)
+        for (let i=0; i<5; i++) {
+            let id = informacion.results[i].id;
+            let title = informacion.results[i].name;
+            let annio = informacion.results[i].first_air_date.slice(0,4);
+            contenido +=  `<article class="peliculas">
+                                <a href="./Details_peliculas.html?id=${id}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${informacion.results[i].poster_path}"></a>
+                                
+                                <a class="nombres" href="./Details_peliculas.html?id=${id}">${title}</a>
+
+                                <a class="nombres" href="./Details_peliculas.html?id=${id}">${annio}</a>
+
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-animation-shake">
+                                        <p class="uk-text-center"><a class="vermas" href="./details_peliculas.html?id=${id}">Ver mas</a></p>
+                                    </div>
+                                </div>
+                               
+                            </article >`
+
+            let botRec = document.querySelector(".Recom");
+            botRec.addEventListener("click", function() {
+                if(botRec.innerHTML == "See recommendations") {
+                    this.innerText = "Close recommendations";
+                    peliculas.innerHTML = contenido;
+                }else {
+                    this.innerText = "See recommendations";
+                    peliculas.innerHTML = "";
+                }
+            })
+    }
+})
 
 
-/* Boton favoritos */
 
+
+/* BOTON FAVORITOS */
 let lista_series_favoritas = []; 
 let storage = localStorage.getItem('lista_series_favoritas')
+let favoritos = document.querySelector(".botonfavorites");
 
 if(storage != null){
     lista_series_favoritas = JSON.parse(storage);
@@ -103,20 +187,4 @@ favoritos.addEventListener("click", function(e) {
     let favToString = JSON.stringify(lista_series_favoritas);
     localStorage.setItem('lista_series_favoritas',favToString)
 
-})
-
-/* BUSCADOR (form) */
-let form = document.querySelector('#form');
-let input = document.querySelector('#palabraPelicula');
-
-form.addEventListener('submit', function(evento) {
-    evento.preventDefault();
-
-    if (input.value == "") {
-        alert('No puedes enviar un form vacio');
-    } else if(input.value.length <3){
-        alert('Debes escribir mas de 3 caracteres');
-    } else {
-        form.submit();
-    }
 })
