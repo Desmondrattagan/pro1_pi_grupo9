@@ -47,7 +47,12 @@ fetch(urlPeliculas)
 
                                     <a class="nombres" href="./details_peliculas.html?id=${id}">${annio}</a>
 
-                                    <a class="vermas" href="./details_peliculas.html?id=${id}">Ver mas</a>
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-animation-shake">
+                                        <p class="uk-text-center"><a class="vermas" href="./details_peliculas.html?id=${id}">Ver mas</a></p>
+                                    </div>
+                                </div>
+                                    
                               </article >`
             contenedor.innerHTML=listaPeliculas
         }return data;

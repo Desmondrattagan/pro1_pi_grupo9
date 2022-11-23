@@ -67,7 +67,7 @@ fetch(urlbusqueda)
             }
         }
     }else {
-        contenedorSearch.innerHTML += "<h1>No hay resultados para su busqueda</h1>";
+        contenedorSearch.innerHTML += '<p class="sinFavoritos">There are no results for your search</p>';
     }
     return data;
 }

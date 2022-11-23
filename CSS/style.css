@@ -5,15 +5,8 @@
 
 /* Para los links */
 a{
-    text-decoration: none;
     color:white;
-    outline: none;
-}
-
-.uk-link, a {
-    text-decoration: none;
-    color:white;
-    outline: none;
+    text-decoration: none
 }
 
 /* Para el cuerpo de todas las páginas */
@@ -91,7 +84,7 @@ header{
 .imagenes{
     width: 220px;
     height: 310px;
-    margin: 25px 30px 15px 30px;
+    margin: 25px 30px 15px 25px;
 }
 
 .nombres{
@@ -102,7 +95,7 @@ header{
     justify-content: space-around;
     font-size: 14px;
     text-align: center;
-    width: 270px;
+    width: 280px;
     color: white;
 }
 
@@ -180,41 +173,42 @@ header{
 
 .contenedorimagendetails{
     background-color:rgba(16, 15, 15, 0.491);
-    margin: 45px 0px 0px 100px;
-    width: 450px;
-    height: 580px;
+    margin: 45px 0px 0px 80px;
+    width: 440px;
+    height: 587px;
 }
 
 .imagendetails{
-    height: 460px;
-    width: 330px;
-    margin: 25px 0px 0px 34px;
+    height: 490px;
+    width: 340px;
+    margin: 30px 0px -30px 43px;
 }
 
 .contenedortitulodetails{
-    margin: 0px 100px 0px 50px;
+    margin: 0px 80px 0px 60px;
     width: 805px;
 }
 
 .titulodetails{
-    font-size: 35px;
+    font-size: 30px;
     padding: 10px;
     background-color:rgba(16, 15, 15, 0.491);
     text-align: center;
     justify-content: center;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
     margin-top: 45px;
+    color: white;
 }
 
 .listaDatos{
     padding: 0%;
     list-style-type: none;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
     font-size: 18px;
 }
 
 .sinopsis{
-    margin-bottom: 45px;
+    margin-bottom: 40px;
     text-align: justify;
     font-size: 15px;
     color:#9e80b8;
@@ -228,39 +222,46 @@ header{
     border-radius: 25px;
     color: white;
     font-size: 14px;
-    margin: 5px 0px 0px 110px;
+    margin: 40px 0px 10px 120PX;
 }
 
 .botondetail{
     background: transparent;
     border: 2px solid #583577;
-    width: 180px;
+    width: 190px;
     height: 40px;
     padding: 8px;
     color: white;
     font-size: 15px;
-    margin: 5px -66px 5px 100px;
-}
-
-#recom{
-    display: block;
-}
-
-#recomClose{
-    display: none;
+    margin: 10px -35px 35px 80px;
 }
 
 .plataformas{
     width: 75px;
     height: 75px;
-    margin: 15px 24px 25px 28px;
+    margin: 30px 26px 0px 26px;
     border-radius: 30px;
-    text-align: center;
-    justify-content: center;
+    align-items: center;
 }
 
-.contenedorTrailer{
-    margin: 10px 0px 20px 49px;
+.tituloProviders{
+    color: white;
+    font-size: 25px;
+    margin: 0px;
+}
+
+.trailer{
+    margin: 25px 20px 5px 20px;
+}
+
+.titulosTrailer{
+    font-size: 20px;
+    color: white;
+    margin: 60px 0px 5px 40px;
+}
+
+.datos{
+    color: white;
 }
 
 /* Genre Details */

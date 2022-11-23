@@ -1,15 +1,12 @@
-/* Defino las URL */
-let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
-let urlGenerosPeliculas = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
-let urlGenerosSeries = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`;
-
 /* ID y nombre */
 let qs = location.search;
 let qsObj = new URLSearchParams(qs);   
 let id = qsObj.get('id');
 id = parseInt(id)
-
 let name = qsObj.get('name')
+
+/* Defino las URL */
+let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
 let urlSeriesGenero= 'https://api.themoviedb.org/3/discover/tv?api_key='+ api_key +'&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' + id
 let urlPeliculasGenero= 'https://api.themoviedb.org/3/discover/movie?api_key='+ api_key +'&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' + id
 

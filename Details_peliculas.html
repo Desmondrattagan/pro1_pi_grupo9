@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DETAILS</title>
     <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-- PARA LAS ANIMACIONES -->
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.14/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.14/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.14/dist/js/uikit-icons.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -33,9 +42,16 @@
             <article class="contenedorimagendetails">
                 <img src="" alt="" class="imagendetails">
 
-                <button class="botonfavorites">
-                    💜 Add to favorites
-                </button>
+                <div class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
+                    <div class="uk-animation-toggle" tabindex="0">
+                        <div class="uk-animation-fade">
+                            <button class="botonfavorites">
+                                💜 Add to favorites
+                            </button></p>
+                        </div>
+                    </div>
+                </div>
+                
             </article> 
 
             <article class="contenedortitulodetails">
@@ -43,26 +59,22 @@
             </article>
         </section>
 
-        <section class="contenedorTrailer">
-            
-        </section>
 
-        <section>
-            <button class="botondetail" id="recom">
-                See recommendations
-            </button>
+        
+        <button class="botondetail Recom">
+            See recommendations
+        </button>
 
-            <button class="botondetail" id="recomClose">
-                Close recommendations
-            </button>
-
-            <button class="botondetail">
-                See trailer
-            </button>
-        </section>
+        <button class="botondetail Trailer">
+            See trailers
+        </button>
 
         <section class="containerPeliculas">
             
+        </section>
+        
+        <section class="videos">
+
         </section>
     </main>
 
