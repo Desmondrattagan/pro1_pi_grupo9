@@ -3,11 +3,12 @@ let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
 let urlGenerosPeliculas = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
 let urlGenerosSeries = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`;
 
-/* ID */
+/* ID y nombre */
 let qs = location.search;
 let qsObj = new URLSearchParams(qs);   
 let id = qsObj.get('id');
 id = parseInt(id)
+
 let name = qsObj.get('name')
 let urlSeriesGenero= 'https://api.themoviedb.org/3/discover/tv?api_key='+ api_key +'&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' + id
 let urlPeliculasGenero= 'https://api.themoviedb.org/3/discover/movie?api_key='+ api_key +'&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=' + id
@@ -16,6 +17,7 @@ let tituloPeliculas = document.querySelector('.tituloPelicula');
 tituloPeliculas.innerText+=  name + ' Movies';
 let tituloSeries = document.querySelector('.tituloSeries');
 tituloSeries.innerText+= name + ' Series';
+
 /* Peliculas */
 fetch(urlPeliculasGenero)
     .then(function(response){
@@ -24,25 +26,27 @@ fetch(urlPeliculasGenero)
     }).then(function(data){
         let contenedor = document.querySelector('.generosPeliculas')
         let array = data.results;
-        console.log(array)
         let listaPeliculasGeneros = '';
-
-        for (let i = 0; i < 14; i++) {
-            let pelicula = array[i];
-            let idPeli = pelicula.id
-            let annio = pelicula.release_date.slice(0,4)
-                listaPeliculasGeneros += `<article class="peliculas">
-                                                <a href="./details_peliculas.html?id=${idPeli}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${pelicula.poster_path}"></a>
-                                                
-                                                <a class="nombres" href="./details_peliculas.html?id=${idPeli}">${pelicula.title}</a>
-
-                                                <a class="nombres" href="./details_peliculas.html?id=${idPeli}">${annio}</a>
-
-                                                <a class="vermas" href="./details_peliculas.html?id=${idPeli}">Ver mas</a>
-                                        </article>`
-                                        
-            }
-            contenedor.innerHTML=listaPeliculasGeneros
+        if (array.length > 0) {
+            for (let i = 0; i < 15; i++) {
+                let pelicula = array[i];
+                let idPeli = pelicula.id
+                let annio = pelicula.release_date.slice(0,4)
+                    listaPeliculasGeneros += `<article class="peliculas">
+                                                    <a href="./details_peliculas.html?id=${idPeli}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${pelicula.poster_path}"></a>
+                                                    
+                                                    <a class="nombres" href="./details_peliculas.html?id=${idPeli}">${pelicula.title}</a>
+    
+                                                    <a class="nombres" href="./details_peliculas.html?id=${idPeli}">${annio}</a>
+    
+                                                    <a class="vermas" href="./details_peliculas.html?id=${idPeli}">Ver mas</a>
+                                            </article>`
+                }
+                contenedor.innerHTML=listaPeliculasGeneros
+        }else{
+            contenedor.innerHTML = '<p class="sinFavoritos" >No movies available for this genre</p>'
+        }
+        
             return data;
 
     }).catch(function (error) {
@@ -55,11 +59,12 @@ fetch(urlSeriesGenero)
         return response.json();
 
     }).then(function(data) {
-        let contenedor = document.getElementById('series');
+        let contenedor = document.querySelector('.generosSeries')
         let arraySeries = data.results;
         let listaSeries = '';
 
-        for (let i = 0; i < 14; i++) {
+        if (arraySeries.length > 0) {
+            for (let i = 0; i < 15; i++) {
             let serie = arraySeries[i];
             let idSerie = arraySeries[i].id;
             let annio = serie.first_air_date.slice(0,4);
@@ -72,8 +77,12 @@ fetch(urlSeriesGenero)
 
                                 <a class="vermas" href="./details_series.html?id=${idSerie}">Ver mas</a>
                             </article >`
+            }
+            contenedor.innerHTML+=listaSeries
+        }else{
+            contenedor.innerHTML = '<p class="sinFavoritos" >No series available for this genre</p>'
         }
-        contenedor.innerHTML+=listaSeries
+        
         return data;
 
     }).catch(function (error) {

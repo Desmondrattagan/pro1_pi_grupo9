@@ -4,7 +4,7 @@ let lista_peliculas_favoritas = JSON.parse(storage);
 let sectionPeli = document.querySelector(".peliculasFavoritas");
 let elementosFavoritosPeli = '';
 if (lista_peliculas_favoritas == null || lista_peliculas_favoritas.length == 0) {
-    sectionPeli.innerHTML = '<p class="sinFavoritos" >No hay películas en favoritos</p>'
+    sectionPeli.innerHTML = '<p class="sinFavoritos" >No movies selected</p>'
 }
 else {
     for (let i = 0; i < lista_peliculas_favoritas.length; i++) {
@@ -44,7 +44,7 @@ let lista_series_favoritas = JSON.parse(storageSerie);
 let sectionSerie = document.querySelector(".seriesFavoritas");
 let elementosFavoritosSeries = '';
 if (lista_series_favoritas == null || lista_series_favoritas.length == 0) {
-    sectionSerie.innerHTML = '<p class="sinFavoritos" >No hay series en favoritos</p>'
+    sectionSerie.innerHTML = '<p class="sinFavoritos" >No series selected</p>'
 }
 else {
     for (let i = 0; i < lista_series_favoritas.length; i++) {

@@ -34,6 +34,7 @@ fetch(urlbusqueda)
     if (listaResultados.length !== 0){
         for( var i = 0; i < listaResultados.length; i++) {
         id = listaResultados[i].id;
+        console.log(listaResultados)
         /* Peliculas */
         if (Object.keys(listaResultados[i]).includes("release_date")) {
             let anniopeli = listaResultados[i].release_date.slice(0,4);

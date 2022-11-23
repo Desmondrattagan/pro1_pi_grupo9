@@ -18,7 +18,7 @@ fetch(urlSlider)
         for (let i = 0; i < 8; i++) {
             let pelicula = array[i];
             let id = array[i].id;
-            listaPeliculas += '<div class=carrou> <a href="./details_series.html?id='+id+'"> <img class="imgCarrou" src="https://image.tmdb.org/t/p/original/'+pelicula.poster_path+'" width="" height="" alt=""></a></div>'
+            listaPeliculas += '<div class="carrou"> <a href="./details_series.html?id='+id+'"> <img class="imgCarrou" src="https://image.tmdb.org/t/p/original/'+pelicula.poster_path+'" width="" height="" alt=""></a></div>'
             contenedor.innerHTML=listaPeliculas
         }return data;
 

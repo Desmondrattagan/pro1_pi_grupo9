@@ -55,14 +55,13 @@ fetch(urlPlataformas)
         texto += `<img class="plataformas" src="https://image.tmdb.org/t/p/original/${array[i].logo_path}"></a>`
     }
     plataformas.innerHTML=texto
-    
 
 }).catch(function (error) {
     return error;
 });
 
 /* TRAILER */
-fetch(urlTrailer)
+/* fetch(urlTrailer)
     .then(function(response){
         return response.json();
 
@@ -82,34 +81,43 @@ fetch(urlTrailer)
         trailer.innerHTML = texto
     
     }else {
-        trailer.innerText = "NO HAY TRAILER DISPONIBLE"
+        trailer.innerText = "NO TRAILER AVAILABLE"
        }
     }).catch(function(error){
     return error;
-})
+}) */
+
 
 /* RECOMENDACIONES  */
-let recomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`
+let botRec = document.querySelector("#recom")
+let botClose = document.querySelector("#recomClose")
 
-fetch(recomendaciones)
+
+botRec.onclick = function(event) {
+    
+    if(event.target == recom) {
+        recom.style.display = "none"
+        let recomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`
+
+    fetch(recomendaciones)
     .then(function (respuesta) {
-         return respuesta.json()
+            return respuesta.json()
     })
     .then(function (informacion) {
-        console.log(informacion)
 
-        for (var i = 0; i < informacion.results.length; i++) {
+        for (var i = 0; i < 5; i++) {
+            let listadoRecomendadas = document.querySelector(".containerPeliculas")
             let id = informacion.results[i].id
             let title = informacion.results[i].title
             let annio = informacion.results[i].release_date.slice(0,4);
-            console.log(informacion.results[i].poster_path)
+            let poster = `https://image.tmdb.org/t/p/original/${informacion.results[i].poster_path}`
             
-            if (informacion.results[i].poster_path === "null") {
-                let poster =  `./img/nodisponible.png`
+            if (informacion.results[i].poster_path == null) {
+                poster =  `/Users/aldanamariagarnero/Desktop/Programacion1/pro1_pi_grupo9/img/noDisponible.jpg`
             }else {
-                let poster = `https://image.tmdb.org/t/p/original/${informacion.results[i].poster_path}`
+                poster = `https://image.tmdb.org/t/p/original/${informacion.results[i].poster_path}`
             }
-            let listadoRecomendadas = document.querySelector(".listado-series-recomendadas")
+
             listadoRecomendadas.innerHTML +=  `<article class="peliculas">
                                 <a href="./Details_peliculas.html?id=${id}"> <img class="imagenes" src="${poster}"></a>
                                 
@@ -119,15 +127,28 @@ fetch(recomendaciones)
 
                                 <a class="vermas" href="./detallePeliculas.html?id=${id}">Ver mas</a>
                             </article >`
-    
+
+            botClose.style.display = "block"
     }
 })
+    }
+}
+
+botClose.onclick = function(event) {
+    botRec.style.display = "block"
+    botClose.style.display = "none"
+}
+
+
+
+
+
+
 
 /* BOTON FAVORITOS */
 let lista_peliculas_favoritas = []; 
 let storage = localStorage.getItem('lista_peliculas_favoritas')
 let favoritos = document.querySelector(".botonfavorites")
-console.log(favoritos)
 
 if(storage != null){
     lista_peliculas_favoritas = JSON.parse(storage);

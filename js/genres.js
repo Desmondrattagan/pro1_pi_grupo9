@@ -12,7 +12,7 @@ fetch(urlGenresPeliculas)
         let listaGenresPeliculas = '';
         console.log(array);
  
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 16; i++) {
             let genero = array[i];
             let nombreGenero = genero.name;
             let idGenero = genero.id;
@@ -25,6 +25,30 @@ fetch(urlGenresPeliculas)
     }).catch(function (error) {
         return error;
     });
+
+fetch(urlGenresSeries)
+.then(function(response){
+    return response.json();
+
+}).then(function(data){
+    let contenedor = document.querySelector('.contenedorGenerosSeries');
+    let array = data.genres;
+    let listaGenresPeliculas = '';
+    console.log(array);
+
+    for (let i = 0; i < 16; i++) {
+        let genero = array[i];
+        let nombreGenero = genero.name;
+        let idGenero = genero.id;
+        listaGenresPeliculas += `<article class="genero">
+                                    <li class="itemgeneros"><a href="./genre_details.html?id=${idGenero}&name=${nombreGenero}"">${nombreGenero}</a></li>                                    
+                                </article>`
+        contenedor.innerHTML=listaGenresPeliculas
+    }
+    return data;
+}).catch(function (error) {
+    return error;
+});
 
 /* BUSCADOR (form) */
 let form = document.querySelector('#form');
