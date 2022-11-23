@@ -13,6 +13,9 @@ form.addEventListener('submit', function(evento) {
         form.submit();
     }
 })
+ 
+
+
 
 /* PAGINA- resultado de busqueda */
 let qs = location.search;

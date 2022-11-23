@@ -101,9 +101,15 @@ fetch(urlTrailer)
 })
 
 /* RECOMENDACIONES  */
-let peliculas = document.querySelector(".containerPeliculas")
-let contenido = ""
-let recomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`
+let botRec = document.querySelector("#recom")
+let botClose = document.querySelector("#recomClose")
+
+
+botRec.onclick = function(event) {
+    
+    if(event.target == recom) {
+        recom.style.display = "none"
+        let recomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`
 
 fetch(recomendaciones)
     .then(function (respuesta) {
@@ -131,18 +137,22 @@ fetch(recomendaciones)
                                
                             </article >`
 
-            let botRec = document.querySelector(".Recom")
-            botRec.addEventListener("click", function() {
-                if(botRec.innerHTML == "See recommendations") {
-                    this.innerText = "Close recommendations"
-                    peliculas.innerHTML = contenido
-                }else {
-                    this.innerText = "See recommendations"
-                    peliculas.innerHTML = ""
-                }
-            })
-}
+            botClose.style.display = "block"
+    }
 })
+    }
+}
+
+botClose.onclick = function(event) {
+    botRec.style.display = "block"
+    botClose.style.display = "none"
+}
+
+
+
+
+
+
 
 /* BOTON FAVORITOS */
 let lista_peliculas_favoritas = []; 
