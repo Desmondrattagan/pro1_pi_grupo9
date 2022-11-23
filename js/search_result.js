@@ -18,7 +18,7 @@ form.addEventListener('submit', function(evento) {
 let qs = location.search;
 let objqs = new URLSearchParams(qs);
 let pelicula = objqs.get('buscador');
-let titulo = document.querySelector(".titulosearch");
+let titulo = document.querySelector(".titulosearch");   
 titulo.innerText = "Results for: " + pelicula.toUpperCase();
 
 let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
@@ -31,6 +31,8 @@ fetch(urlbusqueda)
 ).then(function(data) {
     let listaResultados = data.results;
     let contenedorSearch = document.getElementById("contenedorSearch");
+    console.log(listaResultados);
+    console.log(data);
     if (listaResultados.length !== 0){
         for( var i = 0; i < listaResultados.length; i++) {
         id = listaResultados[i].id;

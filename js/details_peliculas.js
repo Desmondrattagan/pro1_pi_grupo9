@@ -21,9 +21,10 @@ fetch(urlDetalle)
     imagen.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
     //generos
     let generos = data.genres;
+    console.log(generos);
     let textogenero = "";
     for (let i = 0; i < generos.length ; i++) {
-        textogenero += `<a class="datos" href="./genre_details.html?id=${id}&name=${generos[i].name}">•${generos[i].name} </a>` 
+        textogenero += `<a class="datos" href="./genre_details.html?id=${generos[i].id}&name=${generos[i].name}">•${generos[i].name} </a>` 
     }
     let textodetail = `<h1 class="titulodetails">${data.title}</h1> 
                        <ul class="listaDatos">
