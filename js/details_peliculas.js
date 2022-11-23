@@ -90,7 +90,7 @@ fetch(urlPlataformas)
 
 /* RECOMENDACIONES  */
 let botRec = document.querySelector("#recom")
-let botClose = document.querySelector("#recomClose")
+
 
 
 botRec.onclick = function(event) {
@@ -130,17 +130,33 @@ botRec.onclick = function(event) {
 
             botClose.style.display = "block"
     }
+    
 })
     }
 }
 
-botClose.onclick = function(event) {
-    botRec.style.display = "block"
-    botClose.style.display = "none"
+let botClose = document.querySelector("#recomClose")
+    botClose.onclick = function(event) {
+        if(event.target == recomClose) {
+            botRec.style.display = "block"
+            botClose.style.display= 'none'
+            
+                
+            
+
+
+
+
+
+  
+    recom.style.display = "block";
+ }
 }
 
-
-
+var closeRecoModal = document.querySelector(".close-reco");
+  closeRecoModal.onclick = function() {
+  recoModal.style.display = "none";
+ }
 
 
 
