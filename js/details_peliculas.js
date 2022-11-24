@@ -52,7 +52,7 @@ fetch(urlPlataformas)
 }).then(function(data) {
     let plataformas=document.querySelector('.plataformasdiv');
     let array=data.results;
-    let texto= ""
+    let texto= "";
     for(let i=0; i<6; i++){
         texto+=`<img class="plataformas" src="https://image.tmdb.org/t/p/original/${array[i].logo_path}"></a>`
     }
@@ -100,11 +100,11 @@ fetch(urlTrailer)
         }else {
             let botTrailer=document.querySelector(".Trailer");
             botTrailer.addEventListener("click", function() {
-            if(botTrailer.innerHTML == "See trailers") {
+            if(botTrailer.innerHTML == "See more trailers") {
                 this.innerText="Close trailers";
                 trailers.innerHTML='<p class="sinFavoritos">No trailer available</p>';
             }else {
-                this.innerText="See trailers";
+                this.innerText="See more trailers";
                 trailers.innerHTML="";
         }
         });

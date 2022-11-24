@@ -1,8 +1,6 @@
 /* Medida Computadora (1440 x 900) */
 *{
     box-sizing: border-box;
-    margin: 0;
-    padding: 0%;
 }
 
 /* Loader */
@@ -54,9 +52,8 @@
     left: 0;
     z-index: 100000;
     clip-path: circle(150% at 100% 0);
-    transition: clip-path 2.4s ease-in-out;
+    transition: clip-path 1.9s ease-in-out;
 }
-
 .loader2{
     clip-path: circle(0% at 100% 100%);
 }
@@ -69,17 +66,19 @@ a{
 
 /* Para el cuerpo de todas las páginas */
 body{
-    color:white;
+    color: white;
     background-image: url(../img/backgorund2.png);
     background-color: #2b074b;
     background-repeat: repeat;
     background-size: contain;
     margin: 0px;
+    padding: 0%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /* Header */
 header{
+    color: white;
     background-color: rgba(16, 15, 15, 0.491);
     display: flex;
     flex-wrap: wrap;
@@ -88,12 +87,10 @@ header{
     align-items: center;
     padding: 10px;
 }
-
 .logo{
    height: 60px;
    margin-left: 20px;
 }
-
 .contenedoritems{
     display: flex;
     flex-direction: row;
@@ -102,49 +99,41 @@ header{
     margin: 0px 0px 0px 115px;
     padding: 0%;
 }
-
 .items{
     color: white;
     margin: 0px 10px 0px 10px;
     list-style-type: none;
 }
-
 .formulario{
-    border-radius: 100px;
-    height: 25px;
+    height: 21px;
 }
 
 /* Home */
 .uk-slider-container {
     margin: 25px 0px 15px 0px;
 }
-
 .titulo{
     margin: 45px 0px 5px 10px;
     font-size: 25px;
     color: white;
 }
-
 .containerPeliculas{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
 }
-
 .peliculas{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-
 .imagenes{
     width: 220px;
     height: 310px;
     margin: 25px 30px 15px 25px;
 }
-
 .nombres{
     display: flex;
     flex-wrap: wrap;
@@ -156,7 +145,6 @@ header{
     width: 280px;
     color: white;
 }
-
 .vermas{
     display: flex;
     flex-wrap: wrap;
@@ -166,7 +154,7 @@ header{
     background-color: rgba(16, 15, 15, 0.696);
     width: 100px;
     height: 40px;
-    margin: 15px 0px 30px 0px;
+    margin: 15px 0px 45px 0px;
     color: white;
 }
 
@@ -178,7 +166,6 @@ header{
     width: auto;
     margin: 0px 10px 0px 10px;
 }
-
 .sinFavoritos{
     display: flex;
     flex-wrap: wrap;
@@ -188,6 +175,7 @@ header{
     padding: 14px;
     width: 600px;
     justify-content: center;
+    margin-bottom: 10%;
 }
 
 /* Genres */
@@ -197,18 +185,12 @@ header{
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
 .contenedorGenerosSeries{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-.genero{
-    padding: 0%;
-}
-
 .itemgeneros{
     display: flex;
     justify-content: space-around;
@@ -229,25 +211,21 @@ header{
     flex-wrap: nowrap;
     flex-direction: row;
 }
-
 .contenedorimagendetails{
     background-color:rgba(16, 15, 15, 0.491);
     margin: 35px 0px 0px 70px;
     width: 440px;
     height: 587px;
 }
-
 .imagendetails{
     height: 490px;
     width: 340px;
     margin: 30px 0px -30px 43px;
 }
-
 .contenedortitulodetails{
     margin: 0px 70px 0px 60px;
     width: 805px;
 }
-
 .titulodetails{
     font-size: 30px;
     padding: 10px;
@@ -258,21 +236,18 @@ header{
     margin-top: 35px;
     color: white;
 }
-
 .listaDatos{
     padding: 0%;
     list-style-type: none;
     margin-bottom: 25px;
     font-size: 17px;
 }
-
 .sinopsis{
     margin-bottom: 0px;
     text-align: justify;
     font-size: 14px;
     color:#9e80b8;
 }
-
 .botonfavorites{
     background-color:#583577;
     width: 190px;
@@ -281,9 +256,8 @@ header{
     border-radius: 25px;
     color: white;
     font-size: 14px;
-    margin: 40px 0px 10px 120PX;
+    margin: 40px 0px 10px 120px;
 }
-
 .botondetail{
     background: transparent;
     border: 2px solid #583577;
@@ -294,54 +268,35 @@ header{
     font-size: 15px;
     margin: 10px -35px 35px 75px;
 }
-
 .plataformas{
     width: 68px;
     height: 68px;
     margin: 0px 31px 5px 30px;
     border-radius: 30px;
 }
-
-.tituloProviders{
-    color: white;
-    font-size: 25px;
-    margin: 0px;
-}
-
 .trailer{
     margin: 25px 20px 5px 20px;
 }
-
 .trailerPrincipal{
     display: flex;
     align-items: center;
     margin: 25px 40px 0px 160px;
 }
-
 .titulosTrailer{
     font-size: 20px;
     color: white;
     margin: 60px 0px 5px 40px;
 }
-
 .datos{
     color: white;
 }
 
 /* Genre Details */
-#inicioDetailsGenres{
-    background-image: url(../img/horror/PREMIERE.png);
-    height: 490px;
-    background-size: 100%;
-    background-repeat: no-repeat;   
-}
-
 .tituloPelicula{
     margin: 45px 0px 5px 10px;
     font-size: 25px;
     color: white;
 }
-
 .tituloSeries{
     margin: 45px 0px 5px 10px;
     font-size: 25px;
@@ -350,50 +305,19 @@ header{
 
 /* Search result */
 .titulosearch{
-    margin: 45px 0px 5px 10px;
+    margin: 70px 0px 70px 10px;
     color:white;
 }
-
-.contenedorSearch{
+.sinSearch{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    font-size: 30px;
     background-color: #58357798;
-    padding: 45px;
-    width: 1000px;
-    margin: 0px 220px 0px 220px;
-}
-
-.imagenSerieSearch{
-    height: 550px;
-    width: 410px;
-}
-
-.contenedorTextoSearch{
-    margin-left: 45px;
-}
-
-.tituloSerieSearch{
-    font-size: 33px;
-    padding: 13px;
-    background-color:rgba(16, 15, 15, 0.491);
-    text-align: center;
+    padding: 14px;
+    width: 600px;
     justify-content: center;
-    margin: 35px 0px 45px 0px;
-}
-
-.listaDatosSearch{
-    font-size: 19px;
-    padding: 0%;
-    list-style-type: none;
-    margin-bottom: 40px;
-}
-
-.sinopsisSearch{
-    font-size: 15px;
-    width: 410px;
-    text-align: justify;
+    margin-bottom: 30%;
 }
 
 /* Footer */
@@ -406,11 +330,9 @@ footer{
     align-items: center;
     padding: 20px;
 }
-
 .tmdb{
     height: 20px;
 }
-
 .nombresEquipo{
     color: white;
     font-size: 20px;
@@ -421,9 +343,11 @@ footer{
 
 
 /* Medida iPad Air (820 x 1180)*/
-@media(max-width:820px) {     
+@media(max-width:820px) {
+   
     /* Header */
     header{
+        color: white;
         background-color: rgba(16, 15, 15, 0.491);
         display: flex;
         flex-wrap: wrap;
@@ -432,12 +356,10 @@ footer{
         align-items: center;
         padding: 5px;
     }
-    
     .logo{
-       height: 55px;
-       margin-left: 15px;
+       height: 50px;
+       margin-left: 10px;
     }
-    
     .contenedoritems{
         display: flex;
         flex-direction: row;
@@ -445,50 +367,36 @@ footer{
         padding: 0%;
         margin: 0px 0px 0px 118px;
     }
-    
     .items{
         color: white;
-        font-size: 19px;
-        margin: 0px 5px 0px 5px;
+        font-size: 16px;
+        margin: 3.5px 5px 0px 5px;
     }
-    
     .formulario{
-        border-radius: 100px;
-        height: 23px;
+        height: 21px;
     }
 
     /* Home */
-    #inicio{
-        background-image: url("../img/peliculas/8-xmen-movie-poster-design.jpg");
-        height: 280px;
-        background-size: 100%;
-        background-repeat: no-repeat;
-    }
-    
     .titulo{
         margin: 60px 0px 15px 15px;
     }
-
     .containerPeliculas{
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
     }
-
     .peliculas{
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
     }
-
     .imagenes{
-        height: 260px;
-        margin: 25px 20px 10px 20px;
-        width: 190px;
+        height: 210px;
+        margin: 25px 25px 20px 25px;
+        width: 140px;
     } 
-
     .nombres{
         display: flex;
         flex-wrap: wrap;
@@ -496,141 +404,160 @@ footer{
         margin: 0px;
         justify-content: space-around;
         font-size: 15px;
+        width: 250px;
     }
-
     .vermas{
         display: none;
     }
 
     /* Favorites */
     .tituloMyFavorite{
-        margin: 0px 10px 0px 10px;
-        padding: 15px;
+        margin: 65px 10px 50px 10px;
+        padding: 30px;
         background-color:#583577;
         width: auto;
     }
+    .sinFavoritos{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        font-size: 30px;
+        background-color: #58357798;
+        padding: 14px;
+        width: 600px;
+        justify-content: center;
+        margin-bottom: 10%;
+    }
 
     /* Genres */
-    .titulosGenres{
-        margin: 45px 0px 8px 10px;
-    }
-
-    .listageneros{
-        padding: 0%;
-        margin: 0%;
-    }
-
-    .itemgeneros{
+    .contenedorGenerosPeliculas{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .contenedorGenerosSeries{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .itemgeneros{
+        display: flex;
         justify-content: space-around;
         align-items: center;
         background-color: rgba(16, 15, 15, 0.696);
-        width: 150px;
-        height: 71px;
-        margin: 29px;
+        width: 250px;
+        height: 75px;
+        margin: 22px;
         font-size: 17px;
         border: double;
         border-color: #583577;
+        padding: 25px;
     }
     
     /*Details*/
-    .contenedortitulodetails{
+    .contenedordetails{
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
-        margin: 0px 65px 0px 65px;
+        flex-direction: row;
+        justify-content: center;
     }
-
+    .contenedorimagendetails{
+        background-color:rgba(16, 15, 15, 0.491);
+        width: 500px;
+        height: 547px;
+        margin: 20px 0px 0px 0px;
+    }
     .imagendetails{
-        display: none;
+        height: 420px;
+        width: 250px;
+        margin: 30px 0px -23px 127px;
     }
-
+    .contenedortitulodetails{
+        margin: 0px 50px 0px 70px;
+        width: 550px;
+    }
     .titulodetails{
-        font-size: 45px;
+        font-size: 30px;
         padding: 10px;
-        background-color: rgba(16, 15, 15, 0.491);
+        background-color:rgba(16, 15, 15, 0.491);
         text-align: center;
         justify-content: center;
-        margin: 60px 0px 45px 0px;
+        margin-bottom: 15px;
+        margin-top: 35px;
+        color: white;
     }
-
-    .datos{
+    .listaDatos{
+        padding: 0%;
         list-style-type: none;
-        font-size: 25px;
+        margin-bottom: 25px;
+        font-size: 17px;
     }
-    
     .sinopsis{
-        font-size: 20px;
-        width: 100%;
-        margin-top: 45px;
+        margin-bottom: 0px;
         text-align: justify;
+        font-size: 14px;
+        color:#9e80b8;
     }
-    
     .botonfavorites{
         background-color:#583577;
+        width: 190px;
+        height: 45px;
+        padding: 8px;
+        border-radius: 25px;
+        color: white;
+        font-size: 14px;
+        margin: 40px 0px 10px 158px;
+    }
+    .botondetail{
+        background: transparent;
+        border: 2px solid #583577;
+        width: 190px;
+        height: 40px;
+        padding: 8px;
+        color: white;
+        font-size: 15px;
+        margin: 15px -35px 35px 150px;
+    }
+    .plataformas{
+        width: 58px;
+        height: 58px;
+        margin: 10px 20px 5px 13px;
+        border-radius: 20px;
+    }
+    .trailer{
+        margin: 25px 20px 5px 20px;
+    }
+    .trailerPrincipal{
+        display: flex;
+        align-items: center;
+        margin: 25px 40px 0px 140px;
+    }
+    .titulosTrailer{
         font-size: 20px;
-        width: 220px;
-        height: 60px;
-        padding: 15px;
-        border-radius: 35px;
-        margin-top: 20px;
+        color: white;
+        margin: 60px 0px 5px 40px;
+    }
+    .datos{
+        color: white;
     }
     
     /* Genre Details */
-    #inicioDetailsGenres{
-        background-image: url(../img/horror/PREMIERE.png);
-        height: 280px;
-        background-size: 100%;
-        background-repeat: no-repeat;   
+    .tituloPelicula{
+        margin: 45px 0px 5px 10px;
+        font-size: 25px;
+        color: white;
+    }
+    .tituloSeries{
+        margin: 45px 0px 5px 10px;
+        font-size: 25px;
+        color: white;
     }
     
     /* Search result */
     .titulosearch{
         margin: 45px 0px 20px 10px;
-    }
-    
-    .contenedorSearch{
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        justify-content: center;
-        background-color: #58357798;
-        padding: 15px;
-        width: 750px;
-        margin: 0px 30px 0px 33px;
-    }
-
-    .contenedorTextoSearch{
-        margin-left: 25px;
-    }
-    
-    .imagenSerieSearch{
-        height: 417px;
-        width: 285px;
-        margin: 20px 0px 10px 0px;
-    }
-    
-    .tituloSerieSearch{
-        font-size: 25px;
-        padding: 10px;
-        background-color:rgba(16, 15, 15, 0.491);
-        text-align: center;
-        justify-content: center;
-        margin: 20px 0px 28px 0px;
-    }
-    
-    .listaDatosSearch{
-        list-style-type: none;
-        margin-bottom: 28px;
-        font-size: 17px;
-    }
-    
-    .sinopsisSearch{
-        width: 370px;
-        text-align: justify;
-        font-size: 14px;
-        margin: 0%;
     }
 
     /* Footer */
@@ -639,9 +566,16 @@ footer{
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        color: white;
-        font-size: 18px;
-        justify-content: center;
         margin-top: 35px;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 20px;
+    }
+    .tmdb{
+        height: 15px;
+    }
+    .nombresEquipo{
+        color: white;
+        font-size: 15px;
     }
 }

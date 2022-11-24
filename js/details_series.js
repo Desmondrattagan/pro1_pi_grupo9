@@ -26,14 +26,15 @@ fetch(urldetalle)
         textogenero+=`<a class="datos" href="./genre_details.html?id=${generos[i].id}&name=${generos[i].name}">•${generos[i].name} </a>` 
     }
     //html
-    let textodetail=`<h1 class="titulodetails">${data.name}</h1> 
+    let textodetail=`<h1 class="titulodetails">${data.name}</h1>
+                    <div class="plataformasdiv"></div>
                     <ul class="listaDatos">
                         <li class="datos" id="calificacion">Rating: ${data.vote_average}</li>
                         <li class="datos" id="estreno">Release date: ${data.first_air_date}</li>
                         <li class="datos" id="genero">Generos: ${textogenero}</li>
                     </ul>
                     <p class="sinopsis">${data.overview}</p>
-                    <div class="plataformasdiv"></div>`
+                    <div class="trailerPrincipal"></div>`
     contenedor.innerHTML=textodetail;
     return data;
 
@@ -50,7 +51,7 @@ fetch(urlPlataformas)
 }).then(function(data) {
     let plataformas=document.querySelector('.plataformasdiv');
     let array=data.results;
-    let texto=`<h2 class="titulo">Providers:</h2>`
+    let texto="";
     for(let i=0; i<6; i++){
         texto+=`<img class="plataformas" src="https://image.tmdb.org/t/p/original/${array[i].logo_path}"></a>`
     }
@@ -71,34 +72,38 @@ fetch(urlTrailer)
 
     }).then(function(infoTrailer){
         if (infoTrailer.results.length > 0) {
-            for(let i=0; i<infoTrailer.results.length ; i++){ 
+            for(let i=1; i<infoTrailer.results.length ; i++){ 
                 let trailer=infoTrailer.results[i];
                 if (trailer.key != undefined){
+                    /* Agrego trailers */
                     let video=infoTrailer.results[i].key;
                     videos+=`<p class="titulosTrailer">${infoTrailer.results[i].name}</p>
                             <article class="trailer">
                                 <iframe src="https://www.youtube.com/embed/${video}" title="YouTube video player" width=491px height=230px frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </article>`
+                /* Agrego el primer trailer (principal) */
+                let trailerPrincipal=document.querySelector(".trailerPrincipal")
+                trailerPrincipal.innerHTML=`<iframe src="https://www.youtube.com/embed/${infoTrailer.results[0].key}" title="YouTube video player" width=450px height=190px frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
                 }
             }
         let botTrailer=document.querySelector(".Trailer");
         botTrailer.addEventListener("click", function() {
-                if(botTrailer.innerHTML == "See trailers") {
+                if(botTrailer.innerHTML == "See more trailers") {
                     this.innerText="Close trailers";
                     trailers.innerHTML=videos;
                 }else {
-                    this.innerText="See trailers";
+                    this.innerText="See more trailers";
                     trailers.innerHTML="";
                 }
             });
     }else {
         let botTrailer=document.querySelector(".Trailer");
         botTrailer.addEventListener("click", function() {
-            if(botTrailer.innerHTML == "See trailers") {
+            if(botTrailer.innerHTML == "See more trailers") {
                 this.innerText="Close trailers";
                 trailers.innerHTML='<p class="sinFavoritos">No trailer available</p>'
             }else {
-                this.innerText="See trailers";
+                this.innerText="See more trailers";
                 trailers.innerHTML="";
             }
             });

@@ -58,7 +58,7 @@ fetch(urlbusqueda)
                 }
             }
         }else {
-            contenedorSearch.innerHTML+='<p class="sinFavoritos">There are no results for your search</p>';
+            contenedorSearch.innerHTML+='<p class="sinSearch">There are no results for your search</p>';
         }return data;
     }
     ).catch(function(error) {
