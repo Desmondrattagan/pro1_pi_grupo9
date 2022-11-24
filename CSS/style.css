@@ -1,17 +1,75 @@
 /* Medida Computadora (1440 x 900) */
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+}
+
+/* Loader */
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+.loader{
+    color: white;
+    background-color: #2b074b;;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    clip-path: circle(150% at 100% 0);
+    transition: clip-path 2.4s ease-in-out;
+}
+
+.loader2{
+    clip-path: circle(0% at 100% 100%);
 }
 
 /* Para los links */
 a{
     color:white;
-    text-decoration: none
+    text-decoration: none;
 }
 
 /* Para el cuerpo de todas las páginas */
 body{
-    color: white;
+    color:white;
     background-image: url(../img/backgorund2.png);
     background-color: #2b074b;
     background-repeat: repeat;
@@ -115,6 +173,7 @@ header{
 /* Favorites */
 .tituloMyFavorite{
     padding: 17px;
+    color:white;
     background-color: #58357798;
     width: auto;
     margin: 0px 10px 0px 10px;
@@ -156,12 +215,12 @@ header{
     align-items: center;
     background-color: rgba(16, 15, 15, 0.696);
     padding: 25px;
-    width: 220px;
-    height: 75px;
-    margin: 37px 45px 37px 45px;
+    width: 280px;
+    height: 90px;
+    margin: 37px 35px 37px 35px;
     border: double;
     border-color: #583577;
-    font-size: 14px;
+    font-size: 22px;
 }
 
 /*Details*/
@@ -173,7 +232,7 @@ header{
 
 .contenedorimagendetails{
     background-color:rgba(16, 15, 15, 0.491);
-    margin: 45px 0px 0px 80px;
+    margin: 35px 0px 0px 70px;
     width: 440px;
     height: 587px;
 }
@@ -185,7 +244,7 @@ header{
 }
 
 .contenedortitulodetails{
-    margin: 0px 80px 0px 60px;
+    margin: 0px 70px 0px 60px;
     width: 805px;
 }
 
@@ -195,22 +254,22 @@ header{
     background-color:rgba(16, 15, 15, 0.491);
     text-align: center;
     justify-content: center;
-    margin-bottom: 40px;
-    margin-top: 45px;
+    margin-bottom: 15px;
+    margin-top: 35px;
     color: white;
 }
 
 .listaDatos{
     padding: 0%;
     list-style-type: none;
-    margin-bottom: 40px;
-    font-size: 18px;
+    margin-bottom: 25px;
+    font-size: 17px;
 }
 
 .sinopsis{
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     text-align: justify;
-    font-size: 15px;
+    font-size: 14px;
     color:#9e80b8;
 }
 
@@ -233,15 +292,14 @@ header{
     padding: 8px;
     color: white;
     font-size: 15px;
-    margin: 10px -35px 35px 80px;
+    margin: 10px -35px 35px 75px;
 }
 
 .plataformas{
-    width: 75px;
-    height: 75px;
-    margin: 30px 26px 0px 26px;
+    width: 68px;
+    height: 68px;
+    margin: 0px 31px 5px 30px;
     border-radius: 30px;
-    align-items: center;
 }
 
 .tituloProviders{
@@ -252,6 +310,12 @@ header{
 
 .trailer{
     margin: 25px 20px 5px 20px;
+}
+
+.trailerPrincipal{
+    display: flex;
+    align-items: center;
+    margin: 25px 40px 0px 160px;
 }
 
 .titulosTrailer{
@@ -287,6 +351,7 @@ header{
 /* Search result */
 .titulosearch{
     margin: 45px 0px 5px 10px;
+    color:white;
 }
 
 .contenedorSearch{
@@ -350,6 +415,10 @@ footer{
     color: white;
     font-size: 20px;
 }
+
+
+
+
 
 /* Medida iPad Air (820 x 1180)*/
 @media(max-width:820px) {     

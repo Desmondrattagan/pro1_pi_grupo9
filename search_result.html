@@ -32,12 +32,15 @@
         
         
         <form id='form' action="./search_result.html" method="GET">
-            <input id= 'palabraPelicula' class="formulario" type="search" name="buscador" placeholder="series, movies...">
+            <input id= 'palabraPelicula' class="formulario" type="search" name="juan" placeholder="series, movies...">
             <button type="submit">Search</button>
         </form>
     </header>
 
     <main>
+        <!-- Loader -->
+        <div class="lds-ring loader" id="loader"><div></div><div></div><div></div><div></div></div>
+        
         <h2 class="titulosearch"></h2>
         <section class="containerPeliculas" id="contenedorSearch">
             

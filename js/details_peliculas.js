@@ -1,187 +1,201 @@
+/* API KEY */
+let api_key='bc6a66de00e3debea99fdcf92ffc0ab7';
+
 /* ID */
-let qs = location.search;
-let qsObj = new URLSearchParams(qs);   
-let id = qsObj.get('id'); 
+let qs=location.search;
+let qsObj=new URLSearchParams(qs);   
+let id=qsObj.get('id'); 
 
-/* API */
-let api_key = 'bc6a66de00e3debea99fdcf92ffc0ab7';
-let urlDetalle = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US&append_to_response=palabrabuscar`;
-
-/* seleccionar todos los elementos del DOM */
-let imagen     = document.querySelector('.imagendetails');
-let contenedor = document.querySelector('.contenedortitulodetails');
+/* ELEMENTOS DEL DOM */
+let imagen=document.querySelector('.imagendetails');
+let contenedor=document.querySelector('.contenedortitulodetails');
 
 /* COMPLETO EL HTML */
+let urlDetalle=`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US&append_to_response=palabrabuscar`;
 fetch(urlDetalle)
 .then(function(response) {
     return response.json();
 
 }).then(function(data) {
     //portada
-    imagen.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
+    imagen.src=`https://image.tmdb.org/t/p/original/${data.poster_path}`;
     //generos
-    let generos = data.genres;
-    console.log(generos);
-    let textogenero = "";
-    for (let i = 0; i < generos.length ; i++) {
-        textogenero += `<a class="datos" href="./genre_details.html?id=${generos[i].id}&name=${generos[i].name}">•${generos[i].name} </a>` 
+    let generos=data.genres;
+    let textogenero="";
+    for (let i=0; i<generos.length; i++) {
+        textogenero+=`<a class="datos" href="./genre_details.html?id=${generos[i].id}&name=${generos[i].name}">•${generos[i].name} </a>` 
     }
-    let textodetail = `<h1 class="titulodetails">${data.title}</h1> 
-                       <ul class="listaDatos">
-                            <li class="datos" id="calificacion">Rating: ${data.vote_average}</li>
-                            <li class="datos" id="estreno">Release date: ${data.release_date}</li>
-                            <li class="datos" id="duracion">Duration: ${data.runtime}</li>
-                            <li class="datos" id="genero">Generos: ${textogenero}</li>
-                       </ul>
+    //html
+    let textodetail=`<h1 class="titulodetails">${data.title}</h1>
+                    <div class="plataformasdiv"></div>
+                    <ul class="listaDatos">
+                        <li class="datos" id="calificacion">Rating: ${data.vote_average}</li>
+                        <li class="datos" id="estreno">Release date: ${data.release_date}</li>
+                        <li class="datos" id="duracion">Duration: ${data.runtime}</li>
+                        <li class="datos" id="genero">Generos: ${textogenero}</li>
+                    </ul>
                     <p class="sinopsis">${data.overview}</p>
-                    <div class="plataformasdiv"></div>`
-        contenedor.innerHTML=textodetail;
-    
+                    <div class="trailerPrincipal"></div>`
+    contenedor.innerHTML=textodetail;
+    return data;
+
 }).catch(function (error) {
     return error;
 });
 
 /* PLATAFORMAS */
-let urlPlataformas = `https://api.themoviedb.org/3/watch/providers/movie?api_key=${api_key}&language=en-US`;
+let urlPlataformas=`https://api.themoviedb.org/3/watch/providers/movie?api_key=${api_key}&language=en-US`;
 fetch(urlPlataformas)
 .then(function(response) {
     return response.json();
 
 }).then(function(data) {
-    let plataformas = document.querySelector('.plataformasdiv');
-    let array = data.results;
-    let texto = `<h2 class="titulo" >Providers:</h2>`
-    for(let i=0; i < 12; i++){
-        texto += `<img class="plataformas" src="https://image.tmdb.org/t/p/original/${array[i].logo_path}"></a>`
+    let plataformas=document.querySelector('.plataformasdiv');
+    let array=data.results;
+    let texto= ""
+    for(let i=0; i<6; i++){
+        texto+=`<img class="plataformas" src="https://image.tmdb.org/t/p/original/${array[i].logo_path}"></a>`
     }
     plataformas.innerHTML=texto;
+    return data;
 
 }).catch(function (error) {
     return error;
 });
 
 /* TRAILER */
-let trailers = document.querySelector(".videos");
-let videos = "";
-let urlTrailer = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}&language=en-US`;
-
+let trailers=document.querySelector(".videos");
+let videos="";
+let urlTrailer=`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}&language=en-US`;
 fetch(urlTrailer)
     .then(function(response) {
         return response.json();
 
     }).then(function(infoTrailer){
         if (infoTrailer.results.length > 0) {
-            for(let i=0; i < infoTrailer.results.length ; i++){ 
-                let trailer = infoTrailer.results[i];
+            for(let i=1; i<infoTrailer.results.length ; i++){ 
+                let trailer=infoTrailer.results[i];
                 if (trailer.key != undefined){
-                    let video = infoTrailer.results[i].key;
-                    videos += `<p class="titulosTrailer">${infoTrailer.results[i].name}</p>
-                    <article class="trailer">
+                    /* Agrego trailers */
+                    let video=infoTrailer.results[i].key;
+                    videos+=`<p class="titulosTrailer">${infoTrailer.results[i].name}</p>
+                            <article class="trailer">
                                 <iframe src="https://www.youtube.com/embed/${video}" title="YouTube video player" width=491px height=230px frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </article>`
+                /* Agrego el primer trailer (principal) */
+                let trailerPrincipal=document.querySelector(".trailerPrincipal")
+                trailerPrincipal.innerHTML=`<iframe src="https://www.youtube.com/embed/${infoTrailer.results[0].key}" title="YouTube video player" width=450px height=190px frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
                 }
             }
-        let botTrailer = document.querySelector(".Trailer");
-        botTrailer.addEventListener("click", function() {
-                if(botTrailer.innerHTML == "See trailers") {
-                    this.innerText = "Close trailers";
-                    trailers.innerHTML = videos;
-                }else {
-                    this.innerText = "See trailers";
-                    trailers.innerHTML = "";
-                }
-            })
-    }else {
-        trailers.innerText = '<p class="sinFavoritos">No trailer available</p>';
-       }
+            let botTrailer=document.querySelector(".Trailer");
+            botTrailer.addEventListener("click", function() {
+                    if(botTrailer.innerHTML == "See more trailers") {
+                        this.innerText="Close trailers";
+                        trailers.innerHTML=videos;
+                    }else {
+                        this.innerText="See more trailers";
+                        trailers.innerHTML="";
+                    }
+            });
+        }else {
+            let botTrailer=document.querySelector(".Trailer");
+            botTrailer.addEventListener("click", function() {
+            if(botTrailer.innerHTML == "See trailers") {
+                this.innerText="Close trailers";
+                trailers.innerHTML='<p class="sinFavoritos">No trailer available</p>';
+            }else {
+                this.innerText="See trailers";
+                trailers.innerHTML="";
+        }
+        });
+       }return infoTrailer
+
     }).catch(function(error){
     return error;
-})
+});
 
 /* RECOMENDACIONES  */
-let peliculas = document.querySelector(".containerPeliculas");
-let contenido = "";
-let recomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`;
-
+let peliculas=document.querySelector(".containerPeliculas");
+let contenido="";
+let recomendaciones=`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`;
 fetch(recomendaciones)
     .then(function (respuesta) {
             return respuesta.json();
-    })
-    .then(function (informacion) {
+
+    }).then(function (informacion) {
         for (let i=0; i<5; i++) {
-            let id = informacion.results[i].id;
-            let title = informacion.results[i].title;
-            let annio = informacion.results[i].release_date.slice(0,4);
-            contenido +=  `<article class="peliculas">
-                                <a href="./Details_peliculas.html?id=${id}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${informacion.results[i].poster_path}"></a>
+            let id=informacion.results[i].id;
+            let title=informacion.results[i].title;
+            let annio=informacion.results[i].release_date.slice(0,4);
+            contenido+=`<article class="peliculas">
+                            <a href="./Details_peliculas.html?id=${id}"> <img class="imagenes" src="https://image.tmdb.org/t/p/original/${informacion.results[i].poster_path}"></a>
                                 
-                                <a class="nombres" href="./Details_peliculas.html?id=${id}">${title}</a>
+                            <a class="nombres" href="./Details_peliculas.html?id=${id}">${title}</a>
 
-                                <a class="nombres" href="./Details_peliculas.html?id=${id}">${annio}</a>
+                            <a class="nombres" href="./Details_peliculas.html?id=${id}">${annio}</a>
 
-                                <div class="uk-animation-toggle" tabindex="0">
-                                    <div class="uk-animation-shake">
-                                        <p class="uk-text-center"><a class="vermas" href="./details_peliculas.html?id=${id}">Ver mas</a></p>
-                                    </div>
+                            <div class="uk-animation-toggle" tabindex="0">
+                                <div class="uk-animation-shake">
+                                    <p class="uk-text-center"><a class="vermas" href="./details_peliculas.html?id=${id}">See more</a></p>
                                 </div>
-                               
-                            </article >`
-
-            let botRec = document.querySelector(".Recom");
+                            </div>
+                        </article>`
+            let botRec=document.querySelector(".Recom");
             botRec.addEventListener("click", function() {
                 if(botRec.innerHTML == "See recommendations") {
-                    this.innerText = "Close recommendations";
-                    peliculas.innerHTML = contenido;
+                    this.innerText="Close recommendations";
+                    peliculas.innerHTML=contenido;
                 }else {
-                    this.innerText = "See recommendations";
-                    peliculas.innerHTML = "";
+                    this.innerText="See recommendations";
+                    peliculas.innerHTML="";
                 }
-            })
-    }
-})
+            });
+        }return informacion
+
+    }).catch(function(error){
+        return error;
+});
 
 /* BOTON FAVORITOS */
-let lista_peliculas_favoritas = []; 
-let storage = localStorage.getItem('lista_peliculas_favoritas');
-let favoritos = document.querySelector(".botonfavorites");
+let lista_peliculas_favoritas=[]; 
+let storage=localStorage.getItem('lista_peliculas_favoritas');
+let favoritos=document.querySelector(".botonfavorites");
 
-if(storage != null){
-    lista_peliculas_favoritas = JSON.parse(storage);
-};
-
+if(storage != null) {
+    lista_peliculas_favoritas=JSON.parse(storage);
+}
 if (lista_peliculas_favoritas.includes(id)) {
     favoritos.innerText="❌ Remove from favorites";
 }
-
 favoritos.addEventListener("click", function(e) {
     e.preventDefault();
-
-    if(lista_peliculas_favoritas.includes(id)){
-        let indice = lista_peliculas_favoritas.indexOf(id);
+    if(lista_peliculas_favoritas.includes(id)) {
+        let indice=lista_peliculas_favoritas.indexOf(id);
         lista_peliculas_favoritas.splice(indice,1);
         favoritos.innerText="💜 Add to favorites";
-    }else{
+    }else {
         lista_peliculas_favoritas.push(id);
         favoritos.innerText="❌ Remove from favorites";
     }
-
-    let favToString = JSON.stringify(lista_peliculas_favoritas);
+    let favToString=JSON.stringify(lista_peliculas_favoritas);
     localStorage.setItem('lista_peliculas_favoritas',favToString);
-
-})
+});
 
 /* BUSCADOR (form) */
-let form = document.querySelector('#form');
-let input = document.querySelector('#palabraPelicula');
-
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    if(input.value == "") {
-        alert('No puedes enviar un form vacio');
-    } else if(input.value.length <3) {
-        alert('Debes escribir mas de 3 caracteres');
+let form=document.querySelector('#form');
+let input=document.querySelector('#palabraPelicula');
+form.addEventListener('submit', function(evento) {
+    evento.preventDefault();
+    if (input.value == "") {
+        alert('It is not possible to send an empty form');
+    } else if(input.value.length <3){
+        alert('More than three characters must be written');
     } else {
         form.submit();
     }
-})
+});
+
+/* LOADER */
+window.addEventListener('load', function() {
+    this.document.getElementById('loader').classList.toggle('loader2')
+});
